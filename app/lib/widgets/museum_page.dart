@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../theme/tokens.dart';
 import 'page_width.dart';
@@ -56,10 +57,24 @@ class MuseumFooter extends StatelessWidget {
               ),
             ],
           ),
-          const Text(
-            '© WASHIJ',
-            textDirection: TextDirection.ltr,
-            style: TextStyle(color: WashijColors.mutedSky),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              const Text(
+                '© WASHIJ',
+                textDirection: TextDirection.ltr,
+                style: TextStyle(color: WashijColors.mutedSky),
+              ),
+              TextButton(
+                onPressed: () => context.go('/about'),
+                style: TextButton.styleFrom(
+                  foregroundColor: WashijColors.ivory,
+                  minimumSize: const Size(44, 44),
+                  padding: const EdgeInsets.symmetric(horizontal: 8),
+                ),
+                child: const Text('عن المطوّر'),
+              ),
+            ],
           ),
         ],
       ),

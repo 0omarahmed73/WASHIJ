@@ -14,6 +14,7 @@ All routes use path URLs and must open correctly when entered directly. Unknown 
 | `/movements` | Movements index | |
 | `/movement/:id` | Movement page | |
 | `/readings` | Arabic art readings | short excerpts and source links |
+| `/about` | Developer profile | name, role, and external professional links |
 | any other | Not found | link back to `/artworks` |
 
 Back navigation uses the router history, with a fallback to the parent index page when there is none.

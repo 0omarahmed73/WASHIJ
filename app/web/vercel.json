@@ -6,7 +6,8 @@
     { "source": "/artist/:path*", "destination": "/index.html" },
     { "source": "/movements", "destination": "/index.html" },
     { "source": "/movement/:path*", "destination": "/index.html" },
-    { "source": "/readings", "destination": "/index.html" }
+    { "source": "/readings", "destination": "/index.html" },
+    { "source": "/about", "destination": "/index.html" }
   ],
   "headers": [
     {

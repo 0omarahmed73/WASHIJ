@@ -17,6 +17,7 @@ class WashijDrawer extends ConsumerWidget {
     ('/artists', 'الفنانون'),
     ('/movements', 'المدارس الفنية'),
     ('/readings', 'قراءات الفن'),
+    ('/about', 'عن المطوّر'),
   ];
 
   @override

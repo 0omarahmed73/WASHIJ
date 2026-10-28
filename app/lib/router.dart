@@ -5,6 +5,7 @@ import 'pages/artwork_page.dart';
 import 'pages/cleveland_artwork_page.dart';
 import 'pages/artist_page.dart';
 import 'pages/artists_page.dart';
+import 'pages/about_page.dart';
 import 'pages/collection_page.dart';
 import 'pages/home_page.dart';
 import 'pages/movement_page.dart';
@@ -15,6 +16,8 @@ import 'pages/readings_page.dart';
 import 'widgets/shell.dart';
 
 final routerProvider = Provider<GoRouter>((ref) {
+  // Detail pages use push(), so expose the active route for web refreshes.
+  GoRouter.optionURLReflectsImperativeAPIs = true;
   final router = GoRouter(
     initialLocation: '/',
     errorBuilder: (context, state) => NotFoundPage(path: state.uri.path),
@@ -64,6 +67,10 @@ final routerProvider = Provider<GoRouter>((ref) {
           GoRoute(
             path: '/readings',
             builder: (context, state) => const ReadingsPage(),
+          ),
+          GoRoute(
+            path: '/about',
+            builder: (context, state) => const AboutPage(),
           ),
           GoRoute(
             path: '/movement/:id',
