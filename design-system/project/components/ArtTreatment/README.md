@@ -1,0 +1,1 @@
+Placeholder panels show proportion and crop only. Real images come from the holding museum or a verified public-domain source, keep original colour, and carry a credit line. The dark of the identity comes from the surroundings (bg, scrims on UI), never from a filter applied to a painting.

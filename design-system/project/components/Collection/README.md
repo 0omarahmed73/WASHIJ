@@ -1,0 +1,1 @@
+Six-up grid, 4:5 thumbnails with no overlay. Title in artwork-title-ar, artist and date in meta. Filter chips use border-control; the active one takes accent. Images are placeholders.

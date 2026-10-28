@@ -1,0 +1,623 @@
+<title>وَشيج | WASHIJ</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="color-scheme" content="dark">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cormorant+Garamond:wght@400;500;600&family=Aref+Ruqaa:wght@400;700&family=Scheherazade+New:wght@400;700&family=Readex+Pro:wght@300..700&display=swap">
+<style>/* Design plan: nocturnal museum. Tokens come from the approved WASHIJ system (gallery = default, reading-room = light).
+   Layout: RTL editorial pages; paintings sit whole on mats, never filtered; the Long Thread runs in the margin only. */
+:root{--bg:#081b33;--surface:#0e2542;--raised:#14305a;--selected:#1e3a8a;--on-selected:#f6f2e9;--ink:#f6f2e9;--muted:#9fb3cf;--hair:#1f3a5f;--ctl:#5e7ca6;--accent:#7da3d8;--cobalt:#2563eb;--on-cobalt:#f6f2e9;--yellow:#f2c94c;--on-yellow:#081b33;--thread:#f2c94c;--focus:#f2c94c;--danger:#e8907a;--shadow:0 28px 48px -28px rgba(0,5,20,.85);
+ --f-ar:'Aref Ruqaa','Scheherazade New',Georgia,serif;--f-read:'Scheherazade New','Aref Ruqaa',Georgia,serif;--f-mark:'Amiri',Georgia,serif;--f-ui:'Readex Pro',system-ui,-apple-system,'Segoe UI',sans-serif;--f-en:'Cormorant Garamond','Aref Ruqaa',Georgia,serif;--gut:clamp(16px,4vw,56px);--maxw:1280px;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-ui);font-size:15px;line-height:1.7;overflow-x:hidden;padding-left:max(0px,env(safe-area-inset-left,0px));padding-right:max(0px,env(safe-area-inset-right,0px))}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
+img{display:block}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.wrap{max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gut);position:relative}
+.ar{font-family:var(--f-ar)}.en{font-family:var(--f-en);direction:ltr;unicode-bidi:isolate}
+.muted{color:var(--muted)}.acc{color:var(--accent)}
+.eyebrow{font-size:13px;font-weight:500;color:var(--accent)}
+h1,h2,h3{font-family:var(--f-ar);font-weight:700;margin:0;text-wrap:balance}
+h1{font-size:clamp(36px,5.4vw,66px);line-height:1.6}h2{font-size:clamp(28px,3.4vw,40px);line-height:1.6}h3{font-size:24px;line-height:1.6}
+p{margin:0}
+.read{font-family:var(--f-read);font-size:clamp(18px,1.9vw,21px);line-height:2.05;max-width:62ch}
+.read p+p{margin-top:14px}
+/* header */
+.hdr{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--hair)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+.hdr .wrap{display:flex;align-items:center;gap:28px;height:68px}
+.logo{display:flex;align-items:center;gap:10px;flex:none}
+.arw{font-family:var(--f-mark);font-weight:700;font-size:30px;line-height:1.35;white-space:nowrap}.arw i{font-style:normal;color:var(--thread)}
+.nav{display:flex;gap:4px;flex:1}
+.nav a{padding:8px 14px;font-weight:500;color:var(--muted);border-bottom:2px solid transparent;transition:color .15s}
+.nav a:hover{color:var(--ink)}.nav a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--thread)}
+.tools{display:flex;gap:6px;align-items:center}
+.ibtn{width:42px;height:42px;display:grid;place-items:center;border:1px solid transparent;color:var(--ink)}
+.ibtn:hover{border-color:var(--ctl)}
+.srch-btn{display:flex;align-items:center;gap:10px;border:1px solid var(--ctl);padding:0 14px;height:42px;min-width:220px;color:var(--muted);font-size:14px}
+.menu-btn{display:none}
+@media(max-width:860px){.nav,.srch-btn span{display:none}.srch-btn{min-width:0;border-color:transparent;padding:0;width:42px;justify-content:center}.menu-btn{display:grid}.hdr .wrap{gap:12px}}
+.drawer{position:fixed;inset:0;z-index:50;background:var(--bg);padding:20px var(--gut);display:none;flex-direction:column;gap:8px;overflow:auto}
+.drawer.open{display:flex}.drawer a{font-family:var(--f-ar);font-size:28px;font-weight:700;padding:12px 0;border-bottom:1px solid var(--hair)}
+.drawer a[aria-current="page"]{color:var(--accent)}
+.overlay{position:fixed;inset:0;z-index:60;background:var(--bg);display:none;flex-direction:column;padding:calc(20px + env(safe-area-inset-top,0px)) var(--gut) 20px;overflow:auto}
+.overlay.open{display:flex}
+.s-input{width:100%;max-width:720px;margin-inline:auto;display:flex;gap:10px;align-items:center;border-bottom:2px solid var(--thread);padding:10px 0}
+.s-input input{flex:1;background:none;border:0;color:var(--ink);font:500 22px var(--f-ui);outline:none;min-width:0}
+.s-res{max-width:720px;margin:20px auto 0;width:100%;display:grid;gap:0}
+.s-res a{display:flex;gap:14px;align-items:center;padding:12px 0;border-bottom:1px solid var(--hair)}
+.s-res img{width:44px;height:44px;object-fit:contain;background:var(--surface)}
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:46px;padding:0 24px;border:1px solid var(--ctl);font-weight:500;transition:background .15s,border-color .15s}
+.btn:hover{border-color:var(--ink)}
+.btn.pri{background:var(--yellow);color:var(--on-yellow);border-color:var(--yellow)}.btn.pri:hover{filter:brightness(1.06)}
+.btn.sec{background:var(--cobalt);color:var(--on-cobalt);border-color:var(--cobalt)}
+.tl{color:var(--accent);font-weight:500;border-bottom:1px solid transparent}.tl:hover{border-bottom-color:currentColor}
+/* main */
+main{min-height:70vh;animation:in .22s ease-out}
+@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+section{padding-block:clamp(40px,6vw,88px)}
+.sec-h{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:28px;flex-wrap:wrap}
+.thread-sep{display:block;width:100%;height:22px;color:var(--thread)}
+/* plates */
+.mat{background:var(--surface);display:grid;place-items:center;position:relative;overflow:hidden}
+.mat img{width:auto;height:auto;max-width:84%;max-height:84%;box-shadow:var(--shadow);opacity:0;transition:opacity .35s}
+.mat img.ld{opacity:1}
+.mat.noimg{color:var(--muted);text-align:center;padding:16px;font-size:13px}
+.mat.noimg b{display:block;font-family:var(--f-ar);font-size:19px;color:var(--ink)}
+/* hero */
+.hero{padding-block:clamp(28px,4vw,56px) clamp(36px,5vw,72px)}
+.hero-g{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,64px);align-items:center}
+.hero .mat{aspect-ratio:4/3;width:100%}
+.hero .mat img{max-width:88%;max-height:88%}
+.pager{display:flex;gap:10px;align-items:center;margin-top:28px}
+.pager button{width:44px;height:44px;border:1px solid var(--ctl);display:grid;place-items:center;color:var(--muted);font-weight:500}
+.pager button[aria-pressed="true"]{background:var(--selected);color:var(--on-selected);border-color:var(--selected)}
+.cap{font-size:13px;color:var(--muted);line-height:1.8}
+@media(max-width:860px){.hero-g{grid-template-columns:1fr}.hero .mat{order:-1}}
+/* collection grid on home */
+.curated{display:grid;grid-template-columns:repeat(12,1fr);gap:24px}
+.curated .big{grid-column:span 6;grid-row:span 2}.curated .sm{grid-column:span 3}
+.curated .big .mat{aspect-ratio:1/1.02}.curated .sm .mat{aspect-ratio:4/5}
+@media(max-width:900px){.curated .big{grid-column:span 12;grid-row:auto}.curated .sm{grid-column:span 6}}
+.wcard{display:block}.wcard .mat{aspect-ratio:4/5;transition:background .2s}.wcard:hover .mat{background:var(--raised)}
+.wcard h3{margin-top:12px;font-size:22px}.wcard .m{font-size:13px;color:var(--muted)}
+/* spotlight */
+.spot{background:var(--surface);border-block:1px solid var(--hair)}
+.spot-g{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(24px,4vw,64px);align-items:center}
+.spot .mat{background:var(--bg);aspect-ratio:3/2}
+.ctx{list-style:none;margin:22px 0 0;padding:0;display:grid;gap:0;border-top:1px solid var(--hair)}
+.ctx li{padding:12px 0;border-bottom:1px solid var(--hair);display:grid;grid-template-columns:84px 1fr;gap:14px;font-size:14px}
+.ctx b{color:var(--accent);font-weight:500}
+@media(max-width:860px){.spot-g{grid-template-columns:1fr}}
+/* artists */
+.artists{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.acard .mat{aspect-ratio:1/1}.acard h3{margin-top:12px}
+@media(max-width:900px){.artists{grid-template-columns:repeat(2,1fr)}}
+.mv-list{border-top:1px solid var(--hair)}
+.mv-row{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr) auto;gap:16px;align-items:baseline;padding:20px 0;border-bottom:1px solid var(--hair);transition:padding .2s,background .2s}
+.mv-row:hover{background:var(--surface);padding-inline:16px}
+.mv-row h3{font-size:clamp(22px,2.6vw,30px)}
+@media(max-width:700px){.mv-row{grid-template-columns:1fr auto}.mv-row .p{grid-column:1;order:3}}
+/* discovery */
+.threads{display:grid;gap:0}
+.trow{display:grid;grid-template-columns:130px minmax(0,1fr) 130px;gap:20px;align-items:center;padding:22px 0;border-bottom:1px solid var(--hair)}
+.trow .mat{aspect-ratio:1/1}.trow .mat img{max-width:80%;max-height:80%}
+.trow .why{text-align:center;position:relative;padding:0 8px}
+.trow .why::before{content:"";position:absolute;inset-inline:0;top:50%;height:1.5px;background:var(--thread);opacity:.9;z-index:0}
+.trow .why span{position:relative;z-index:1;background:var(--bg);padding:6px 14px;display:inline-block;font-size:14px;max-width:100%}
+@media(max-width:700px){.trow{grid-template-columns:76px minmax(0,1fr) 76px;gap:10px}.trow .why span{font-size:12px;padding:4px 8px}}
+/* collection page */
+.page-h{padding-block:clamp(32px,5vw,64px) 24px;border-bottom:1px solid var(--hair)}
+.coll{display:grid;grid-template-columns:260px minmax(0,1fr);gap:clamp(20px,3vw,48px);padding-block:32px 72px}
+.flt{display:grid;gap:18px;align-content:start;position:sticky;top:90px}
+.fld label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
+.fld input,.fld select{width:100%;height:44px;background:var(--surface);color:var(--ink);border:1px solid var(--ctl);padding:0 12px;font:500 15px var(--f-ui);border-radius:0;appearance:none}
+.fld select{background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-size:6px 6px;background-repeat:no-repeat;background-position:14px 19px,20px 19px;padding-inline-start:36px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px;min-height:0}
+.chip{display:inline-flex;gap:8px;align-items:center;background:var(--selected);color:var(--on-selected);padding:5px 12px;font-size:13px}
+.res-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:18px;flex-wrap:wrap;color:var(--muted);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px 22px}
+@media(max-width:1080px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:860px){.coll{grid-template-columns:1fr}.flt{position:static;grid-template-columns:1fr 1fr}.flt .fld.full{grid-column:1/-1}}
+@media(max-width:480px){.grid{gap:22px 14px}.flt{grid-template-columns:1fr}}
+.empty{border:1px dashed var(--ctl);padding:48px 24px;text-align:center;display:grid;gap:12px;justify-items:center}
+.empty h3{font-size:26px}
+.fbtn{display:none}
+@media(max-width:860px){.fbtn{display:inline-flex}.flt.collapsed{display:none}}
+/* detail */
+.crumbs{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--muted);padding-block:18px;flex-wrap:wrap}
+.crumbs a:hover{color:var(--ink)}
+.detail{position:relative}
+.d-hero{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,8fr);gap:clamp(24px,4vw,64px);align-items:start;padding-bottom:40px}
+.plate{margin:0;position:relative}
+.plate .mat{min-height:340px;padding:clamp(14px,3vw,40px)}
+.plate .mat img{max-width:100%;max-height:min(78vh,900px);cursor:zoom-in}
+.zoom{position:absolute;inset-block-start:10px;inset-inline-start:10px;background:var(--bg);border:1px solid var(--ctl);width:42px;height:42px;display:grid;place-items:center;z-index:2}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:16px 24px;padding:20px 0;border-block:1px solid var(--hair);margin:22px 0}
+.facts dt{font-size:13px;color:var(--muted)}.facts dd{margin:0;font-weight:500}
+.facts div.w{grid-column:1/-1}
+@media(max-width:980px){.d-hero{grid-template-columns:1fr}.plate{order:-1}}
+.subnav{position:sticky;top:68px;z-index:10;background:var(--bg);border-block:1px solid var(--hair);overflow-x:auto;scrollbar-width:none}
+.subnav .wrap{display:flex;gap:2px;white-space:nowrap}
+.subnav a{padding:14px 18px;font-weight:500;color:var(--muted);border-bottom:2px solid transparent}
+.subnav a.on{color:var(--ink);border-bottom-color:var(--thread)}
+.dsec{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,8fr);gap:clamp(20px,4vw,64px);padding-block:clamp(36px,5vw,64px);border-bottom:1px solid var(--hair);scroll-margin-top:130px}
+@media(max-width:860px){.dsec{grid-template-columns:1fr;gap:14px}}
+.dts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+@media(max-width:900px){.dts{grid-template-columns:1fr}}
+.crop{width:100%;background-repeat:no-repeat;background-color:var(--surface);border:1px solid var(--hair)}
+.dts h3{margin:12px 0 4px;font-size:20px}.dts p{font-size:14px;color:var(--muted);line-height:1.9}
+.interp{display:grid;gap:14px;max-width:760px}
+.intp{background:var(--surface);border:1px solid var(--hair);padding:20px 22px}
+.intp p{font-family:var(--f-read);font-size:20px;line-height:1.95}
+.intp .a{margin-top:8px;font-size:13px;color:var(--accent)}
+.note{font-size:13px;color:var(--muted);border-inline-start:2px solid var(--ctl);padding-inline-start:12px;margin-top:6px}
+.srcs{list-style:none;margin:0;padding:0;display:grid;gap:8px;font-size:14px;color:var(--muted)}.srcs a{color:var(--accent);border-bottom:1px solid transparent}.srcs a:hover{border-bottom-color:currentColor}
+.rel{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.rel .why{font-size:13px;color:var(--accent);margin-top:4px;line-height:1.8}
+@media(max-width:860px){.rel{grid-template-columns:1fr 1fr}}@media(max-width:520px){.rel{grid-template-columns:1fr}}
+.rail{position:absolute;inset-block:0;inset-inline-start:0;width:48px;pointer-events:none;display:none}
+@media(min-width:1180px){.rail{display:block}.detail .wrap{padding-inline-start:calc(var(--gut) + 28px)}}
+.rail path{fill:none;stroke:var(--thread);stroke-width:1.5;stroke-linecap:round}
+.rail circle{fill:var(--bg);stroke:var(--thread);stroke-width:1.5}
+.lb{position:fixed;inset:0;z-index:70;background:rgba(3,10,22,.96);display:none;place-items:center;padding:16px;cursor:zoom-out}
+.lb.open{display:grid}.lb img{max-width:100%;max-height:100%;object-fit:contain}
+.lb button{position:absolute;inset-block-start:calc(12px + env(safe-area-inset-top,0px));inset-inline-start:12px;width:44px;height:44px;border:1px solid var(--ctl);color:#f6f2e9;background:#081b33;display:grid;place-items:center}
+/* artist / movement */
+.p-hero{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,4fr);gap:clamp(24px,4vw,64px);align-items:end;padding-block:clamp(32px,5vw,64px)}
+.p-hero .mat{aspect-ratio:4/5;max-width:360px;width:100%}
+@media(max-width:860px){.p-hero{grid-template-columns:1fr}.p-hero .mat{max-width:260px}}
+.meta-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.tag{border:1px solid var(--ctl);padding:5px 14px;font-size:14px}.tag:hover{border-color:var(--ink)}
+.traits{list-style:none;margin:0;padding:0;display:grid;gap:0;border-top:1px solid var(--hair);max-width:640px}
+.traits li{padding:14px 0;border-bottom:1px solid var(--hair);font-family:var(--f-read);font-size:20px;display:flex;gap:14px}
+.traits li::before{content:"";width:8px;height:1.5px;background:var(--thread);margin-top:.95em;flex:none}
+.alist{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:20px}
+.alist a{border:1px solid var(--hair);padding:16px;display:grid;gap:2px;transition:background .15s}.alist a:hover{background:var(--surface)}
+/* footer */
+.ftr{border-top:1px solid var(--hair);padding-block:40px 56px;margin-top:40px}
+.ftr-g{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,3fr) minmax(0,4fr);gap:32px}
+.ftr a:hover{color:var(--ink)}.ftr ul{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+@media(max-width:760px){.ftr-g{grid-template-columns:1fr}}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+.hero-g>*,.spot-g>*,.d-hero>*,.p-hero>*,.dsec>*,.coll>*,.ftr-g>*,.trow>*,.curated>*{min-width:0}
+.read{max-width:min(62ch,100%);overflow-wrap:anywhere}
+.crop{margin-inline:0}
+
+/* poetic layer */
+.poem{font-family:var(--f-ar);font-size:clamp(26px,3vw,36px);line-height:1.8;color:var(--ink);display:flex;gap:16px;align-items:flex-start;margin-top:18px;max-width:30ch}
+.poem::before{content:"";flex:none;width:26px;height:1.5px;background:var(--thread);margin-top:1.25em}
+.poem small{display:block;font:400 12px var(--f-ui);color:var(--muted);margin-top:4px}
+.mline{font-family:var(--f-ar);font-size:clamp(26px,3vw,34px);color:var(--accent);margin-top:6px}
+.stars{position:relative}
+.stars::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.55;background-image:radial-gradient(circle,var(--yellow) 0 1.2px,transparent 1.6px),radial-gradient(circle,var(--accent) 0 1px,transparent 1.4px),radial-gradient(circle,var(--ink) 0 .9px,transparent 1.3px);background-size:260px 210px,340px 280px,410px 330px;background-position:12px 30px,150px 90px,70px 170px;-webkit-mask-image:linear-gradient(to bottom,#000,transparent 85%);mask-image:linear-gradient(to bottom,#000,transparent 85%)}
+.stars>*:not(.rail){position:relative}
+.detail.stars::before{inset:0 0 auto 0;height:720px}
+.cpoem{font-family:var(--f-ar);font-size:20px;color:var(--accent);margin-top:2px}
+.manif{padding-block:clamp(56px,9vw,120px);text-align:center}
+.manif p{font-family:var(--f-ar);font-size:clamp(32px,4.8vw,58px);line-height:1.75;max-width:22ch;margin-inline:auto;text-wrap:balance}
+.manif p em{font-style:normal;color:var(--yellow)}
+.manif .cap{margin-top:18px}
+.weave{display:block;width:100%;height:auto;max-height:160px;color:var(--ctl)}
+.hero-poem{margin-top:26px;font-family:var(--f-read);font-size:22px;line-height:1.9;color:var(--muted);max-width:34ch}
+
+.sky{background:linear-gradient(to bottom,rgba(8,27,51,.5),rgba(8,27,51,.35) 55%,var(--bg) 100%),var(--sky,none) center/cover no-repeat,var(--bg)}
+.manif.sky{background:linear-gradient(rgba(8,27,51,.62),rgba(8,27,51,.62)),var(--sky,none) center/cover no-repeat,var(--bg);border-block:1px solid var(--hair)}
+.hero.sky .wrap::before{display:none}
+.detail.stars::before{background-image:var(--sky,none);background-size:cover;background-position:center;opacity:.28;-webkit-mask-image:linear-gradient(to bottom,#000,transparent);mask-image:linear-gradient(to bottom,#000,transparent)}
+.hero.sky .read,.hero.sky .hero-poem,.hero.sky .eyebrow{text-shadow:0 0 14px #081b33,0 0 5px #081b33;color:#cdd9ec}
+.hero.sky .eyebrow{color:#9fc0ee}
+.manif.sky p{text-shadow:0 0 18px #081b33}
+
+/* cinematic hero */
+.hero{position:relative;min-height:clamp(560px,84vh,740px);display:flex;padding:0;overflow:hidden;border-bottom:1px solid var(--hair)}
+#heroIn{display:contents}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-repeat:no-repeat}
+.hero-scrim{position:absolute;inset:0;background:linear-gradient(to left,rgba(8,27,51,.94) 0,rgba(8,27,51,.82) 30%,rgba(8,27,51,.28) 58%,rgba(8,27,51,0) 78%),linear-gradient(to top,var(--bg) 0,rgba(8,27,51,0) 22%)}
+.hero-thread{position:absolute;inset-inline:0;bottom:6px;width:100%;height:110px;pointer-events:none}
+.hero-in{position:relative;width:100%;display:flex;flex-direction:column;justify-content:space-between;gap:32px;padding-block:clamp(40px,7vw,88px) 96px}
+.hero-txt{max-width:520px}
+.hero-txt .read,.hero-txt .hero-poem,.hero-txt .eyebrow{text-shadow:0 0 14px #081b33,0 0 4px #081b33;color:#d4deee}
+.hero-txt .eyebrow{color:#9fc0ee}
+.hero-foot{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+.hero-cap{display:grid;gap:0;font-size:14px;color:#d4deee;text-shadow:0 0 10px #081b33;max-width:46ch}.hero-cap b{font-size:20px;color:var(--ink)}.hero-cap span{color:var(--accent);font-size:13px}
+@media(max-width:860px){.hero{display:block;min-height:0;overflow:hidden}.hero-bg{position:relative;inset:auto;height:min(62vw,300px);background-size:cover}.hero-scrim{display:none}.hero-thread{top:min(62vw,300px);bottom:auto;transform:translateY(-70%);height:90px}.hero-in{padding-block:28px 36px}.hero-txt .read,.hero-txt .hero-poem{text-shadow:none}}
+/* brackets, chips, rail, tiles */
+.brk{position:relative;display:block}
+.brk::before,.brk::after{content:"";position:absolute;width:30px;height:30px;border:0 solid var(--thread);pointer-events:none;z-index:3}
+.brk::before{left:-8px;top:-8px;border-top-width:1.6px;border-left-width:1.6px}
+.brk::after{right:-8px;bottom:-8px;border-bottom-width:1.6px;border-right-width:1.6px}
+.achip{display:inline-flex;align-items:center;gap:12px;margin-top:16px;border:1px solid var(--hair);padding:8px 18px 8px 14px;background:var(--surface);transition:border-color .15s}.achip:hover{border-color:var(--ctl)}
+.achip .av{width:44px;height:44px;display:grid;place-items:center;border:1px solid var(--hair);background:var(--bg)}
+.railbtns{display:flex;gap:8px}.railbtns button{width:44px;height:44px;border:1px solid var(--ctl);display:grid;place-items:center;font-size:18px}.railbtns button:hover{background:var(--selected)}
+.rail-sc{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:14px;scrollbar-width:thin}
+.rail-sc .wcard{flex:0 0 clamp(170px,21vw,240px);scroll-snap-align:start}
+.tiles3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.tile3{display:grid;gap:14px;border:1px solid var(--hair);background:var(--surface);transition:border-color .15s}.tile3:hover{border-color:var(--ctl)}
+.tile3 .mat{aspect-ratio:16/9}.tile3>div{padding:0 20px 20px}.tile3 h3{font-size:24px}
+@media(max-width:760px){.tiles3{grid-template-columns:1fr}}
+.intp{position:relative;padding-inline-start:54px}.intp::before{content:"»";position:absolute;inset-inline-start:16px;top:6px;font:700 44px/1 var(--f-ar);color:var(--thread);opacity:.8}
+
+h1:focus,main:focus{outline:none}
+</style>
+<div id="app" dir="rtl" lang="ar">
+<a class="sr" href="#view">انتقل إلى المحتوى</a>
+<header class="hdr"><div class="wrap"><a class="logo" id="logoA" href="#" data-go="" aria-label="وَشيج، الرئيسية"></a>
+<nav class="nav" aria-label="التنقل الرئيسي"><a href="#" data-go="" data-nav="home">الرئيسية</a><a href="#" data-go="artworks" data-nav="artworks">اللوحات</a><a href="#" data-go="artists" data-nav="artists">الفنانون</a><a href="#" data-go="movements" data-nav="movements">المدارس الفنية</a></nav>
+<div class="tools"><button class="srch-btn" id="openS" type="button" aria-label="بحث"><span>ابحث عن لوحة أو فنان</span></button><button class="ibtn menu-btn" id="openM" type="button" aria-label="القائمة"></button></div></div></header>
+<div class="drawer" id="drawer" role="dialog" aria-label="القائمة"><div style="display:flex;justify-content:space-between;align-items:center"><span class="logo" style="gap:10px"></span><button class="ibtn" id="closeM" type="button" aria-label="إغلاق"></button></div>
+<a href="#" data-go="" data-nav="home">الرئيسية</a><a href="#" data-go="artworks" data-nav="artworks">اللوحات</a><a href="#" data-go="artists" data-nav="artists">الفنانون</a><a href="#" data-go="movements" data-nav="movements">المدارس الفنية</a></div>
+<div class="overlay" id="sov" role="dialog" aria-label="بحث"><div class="s-input"><input id="sq" type="search" placeholder="ابحث عن لوحة أو فنان" autocomplete="off" aria-label="بحث"><button class="ibtn" id="closeS" type="button" aria-label="إغلاق البحث"></button></div><div class="s-res" id="sr"></div></div>
+<div class="lb" id="lb" role="dialog" aria-label="عرض اللوحة"><img id="lbi" alt=""><button type="button" id="lbx" aria-label="إغلاق"></button></div>
+<main id="view" tabindex="-1"></main></div>
+<script>const IMGS={"starry-night": {"w": 1920, "h": 1520, "file": "Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg", "wiki": "https://en.wikipedia.org/wiki/The_Starry_Night"}, "girl-pearl-earring": {"w": 960, "h": 1137, "file": "1665_Girl_with_a_Pearl_Earring.jpg", "wiki": "https://en.wikipedia.org/wiki/Girl_with_a_Pearl_Earring"}, "great-wave": {"w": 1280, "h": 860, "file": "Tsunami_by_hokusai_19th_century.jpg", "wiki": "https://en.wikipedia.org/wiki/The_Great_Wave_off_Kanagawa"}, "mona-lisa": {"w": 960, "h": 1452, "file": "Mona_Lisa.jpg", "wiki": "https://en.wikipedia.org/wiki/Mona_Lisa"}, "birth-of-venus": {"w": 1280, "h": 804, "file": "Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg", "wiki": "https://en.wikipedia.org/wiki/The_Birth_of_Venus_(Botticelli)"}, "impression-sunrise": {"w": 1280, "h": 993, "file": "Monet_-_Impression%2C_Sunrise.jpg", "wiki": "https://en.wikipedia.org/wiki/Impression,_Sunrise"}, "the-scream": {"w": 960, "h": 1191, "file": "Edvard_Munch%2C_1893%2C_The_Scream%2C_oil%2C_tempera_and_pastel_on_cardboard%2C_91_x_73_cm%2C_National_Gallery_of_Norway.jpg", "wiki": "https://en.wikipedia.org/wiki/The_Scream"}, "night-watch": {"w": 1280, "h": 1041, "file": "La_ronda_de_noche%2C_por_Rembrandt_van_Rijn.jpg", "wiki": "https://en.wikipedia.org/wiki/The_Night_Watch"}, "milkmaid": {"w": 960, "h": 1079, "file": "Johannes_Vermeer_-_Het_melkmeisje_-_Google_Art_Project.png", "wiki": "https://en.wikipedia.org/wiki/The_Milkmaid_(Vermeer)"}, "wanderer": {"w": 960, "h": 1231, "file": "Caspar_David_Friedrich_-_Wanderer_above_the_Sea_of_Fog.jpeg", "wiki": "https://en.wikipedia.org/wiki/Wanderer_above_the_Sea_of_Fog"}, "las-meninas": {"w": 960, "h": 1105, "file": "Las_Meninas%2C_by_Diego_Vel%C3%A1zquez%2C_from_Prado_in_Google_Earth.jpg", "wiki": "https://en.wikipedia.org/wiki/Las_Meninas"}, "the-kiss": {"w": 960, "h": 963, "file": "The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg", "wiki": "https://en.wikipedia.org/wiki/The_Kiss_(Klimt)"}, "cafe-terrace": {"w": 960, "h": 1197, "file": "Van_Gogh_-_Terrace_of_a_Caf%C3%A9_at_Night_%28Place_du_Forum%29_1888.jpg", "wiki": "https://en.wikipedia.org/wiki/Caf%C3%A9_Terrace_at_Night"}};const MOVEMENTS={
+ renaissance:{line:'عينٌ تتعلم النظر من جديد',ar:'النهضة',orig:'Renaissance',period:'نحو 1400 – 1600',where:'إيطاليا أولًا ثم أوروبا',intro:'حركة فنية وثقافية بدأت في مدن إيطاليا، ورجعت إلى دراسة الإنسان والعالم بعين جديدة، مستندة إلى المنظور والتشريح وملاحظة الطبيعة.',traits:['المنظور الخطي لتمثيل العمق','دراسة التشريح والتناسب','موضوعات دينية وأسطورية وبورتريه','عناية بالتوازن والتكوين']},
+ baroque:{line:'ضوءٌ يقتحم المسرح',ar:'الباروك',orig:'Baroque',period:'نحو 1600 – 1750',where:'أوروبا',intro:'فن يقوم على الدراما والحركة وتباين الضوء والظل، ازدهر في الكنيسة والبلاط معًا، وسعى إلى أن يأخذ المشاهد إلى قلب المشهد.',traits:['تباين قوي بين الضوء والعتمة','حركة وانفعال في التكوين','تفاصيل غنية ومساحات كبيرة','رعاة من الكنيسة والبلاط']},
+ dutch:{line:'نافذةٌ وضوءٌ وبيتٌ يتأمل نفسه',ar:'العصر الذهبي الهولندي',orig:'Dutch Golden Age',period:'القرن 17',where:'الجمهورية الهولندية',intro:'فن ازدهر مع نمو المدن التجارية الهولندية. كان رعاته من التجار والمؤسسات المدنية لا من الكنيسة والبلاط، فاتجه إلى الحياة اليومية والمناظر والبورتريه الجماعي.',traits:['مشاهد داخلية وحياة يومية','البورتريه الجماعي والفردي','عناية فائقة بالضوء','لوحات تناسب البيوت لا القصور']},
+ romanticism:{line:'الطبيعة مرآةُ القلب',ar:'الرومانسية',orig:'Romanticism',period:'أواخر القرن 18 – منتصف القرن 19',where:'أوروبا',intro:'تيار رأى في الطبيعة والمشاعر والخيال مصدرًا للفن، وقدّم الفرد وتجربته الداخلية على القواعد الأكاديمية الصارمة.',traits:['الطبيعة المهيبة والأفق الواسع','الانفعال والخيال','فردية الفنان','حضور الشعر والتاريخ والأساطير']},
+ impressionism:{line:'اللحظة قبل أن تمضي',ar:'الانطباعية',orig:'Impressionism',period:'ستينيات – ثمانينيات القرن 19',where:'فرنسا',intro:'خرج فنانوها من المرسم إلى الهواء الطلق ليلتقطوا أثر الضوء العابر على المشهد. وجاء اسمها من عنوان لوحة مونيه «انطباع، شروق الشمس»، حين وصف ناقد معرضهم الأول عام 1874 بسخرية.',traits:['الرسم في الهواء الطلق','ضربات فرشاة سريعة مرئية','عناية بالضوء واللحظة العابرة','موضوعات من الحياة الحديثة والطبيعة']},
+ postimpressionism:{line:'اللون حين يصير شعورًا',ar:'ما بعد الانطباعية',orig:'Post-Impressionism',period:'نحو 1886 – 1905',where:'فرنسا وأوروبا',intro:'اسم يجمع فنانين تعلّموا من الانطباعية ثم مضوا في طرق شخصية، فاتجه بعضهم إلى اللون المعبّر وبعضهم إلى البناء والشكل.',traits:['لون معبّر لا وصفي','ضربات فرشاة بارزة','تفضيل التعبير الشخصي على نقل المشهد','تباين كبير بين فنان وآخر']},
+ symbolism:{line:'ما لا يُقال يُرسم',ar:'الرمزية',orig:'Symbolism',period:'أواخر القرن 19 – مطلع القرن 20',where:'أوروبا',intro:'اتجه فنانوها إلى التعبير عن الأفكار والمشاعر الداخلية بالرموز والإيحاء بدل وصف الواقع. ويُنظر إلى بعض أعمال مونش بوصفها تمهيدًا للتعبيرية.',traits:['الإيحاء بدل الوصف','الزخرفة والخطوط المنحنية عند بعضهم','موضوعات الحب والموت والقلق','استخدام الذهب والمساحات المسطحة عند كليمت']},
+ ukiyoe:{line:'عالمٌ عائمٌ على الورق',ar:'الأوكيو-إي',orig:'Ukiyo-e',period:'القرنان 17 – 19',where:'اليابان',intro:'اسمها يعني «صور العالم العائم». هي مطبوعات خشبية ولوحات يابانية انتشرت في مدينة إيدو، وصوّرت الممثلين والمناظر والحياة المدنية. ووصل أثرها إلى فنانين أوروبيين في القرن 19.',traits:['طباعة بقوالب خشبية، وعدد كبير من النسخ','خطوط واضحة ومساحات لونية مسطحة','تكوينات غير متماثلة وقص جريء','مناظر طبيعية وحياة المدينة']},
+ surrealism:{line:'حلمٌ بعينين مفتوحتين',ar:'السريالية',orig:'Surrealism',period:'من عشرينيات القرن 20',where:'فرنسا ثم العالم',intro:'حركة أعلنها الشاعر أندريه بروتون في بيانه عام 1924، وسعت إلى فتح باب الأحلام واللاوعي في الفن، فجمعت بين عناصر واقعية بتركيب غير مألوف.',traits:['صور أحلام وتركيبات غريبة','الجمع بين عناصر واقعية في سياق غير منطقي','اهتمام بالأحلام والتحليل النفسي','أسلوب دقيق التفاصيل عند بعض الفنانين']}
+};
+const ARTISTS={
+ 'van-gogh':{ar:'فينسنت فان غوخ',orig:'Vincent van Gogh',born:'1853',died:'1890',place:'زوندرت (هولندا) – أوفير سور واز (فرنسا)',lead:'starry-night',movements:['postimpressionism'],
+  bio:'رسّام هولندي بدأ الرسم في سن متأخرة نسبيًا، وترك في عقد واحد تقريبًا أكثر من ألفي عمل بين لوحات ورسوم. عاش في هولندا ثم باريس ثم آرل، ودخل مصحة سان ريمي بعد أزمة نفسية. وكانت رسائله إلى أخيه ثيو مصدرًا أساسيًا لفهم أعماله.',
+  style:'يقوم أسلوبه على ضربات فرشاة سميكة قصيرة ولون كثيف يعبّر عن الإحساس لا عن مظهر الأشياء وحده. تأثر بالانطباعيين في باريس، وبالمطبوعات اليابانية التي جمعها، فخفّت ألوانه وصارت أوضح.'},
+ vermeer:{ar:'يوهانس فيرمير',orig:'Johannes Vermeer',born:'1632',died:'1675',place:'دلفت (هولندا)',lead:'girl-pearl-earring',movements:['dutch'],
+  bio:'رسّام من مدينة دلفت، لم يترك سوى عدد قليل من اللوحات، ينسب إليه الباحثون نحو أربع وثلاثين لوحة. لا تُعرف عنه تفاصيل كثيرة، ولم تنل أعماله شهرتها الكبيرة إلا في القرن 19.',
+  style:'مشاهد هادئة في الداخل يدخلها الضوء من نافذة إلى اليسار، وعناية بالأسطح والأقمشة، وألوان نقية مثل الأزرق والأصفر.'},
+ hokusai:{ar:'كاتسوشيكا هوكوساي',orig:'葛飾北斎 · Katsushika Hokusai',born:'نحو 1760',died:'1849',place:'إيدو (طوكيو اليوم)',lead:'great-wave',movements:['ukiyoe'],
+  bio:'فنان ياباني غزير الإنتاج عمل أكثر من سبعين عامًا وغيّر اسمه الفني مرات. أصدر سلسلة «ستة وثلاثين منظرًا لجبل فوجي» وهو في السبعين تقريبًا.',
+  style:'يجمع بين دقة الخط والتكوين الجريء، وقد أدخل إلى مطبوعاته صبغة الأزرق البروسي الذي كان جديدًا في اليابان.'},
+ leonardo:{ar:'ليوناردو دا فينشي',orig:'Leonardo da Vinci',born:'1452',died:'1519',place:'فينشي (إيطاليا) – أمبواز (فرنسا)',lead:'mona-lisa',movements:['renaissance'],
+  bio:'فنان إيطالي من عصر النهضة، عمل في الرسم والنحت والهندسة ودرس التشريح والطبيعة، وترك دفاتر ملاحظات غنية. وصلت إلينا من لوحاته أعمال قليلة.',
+  style:'أسلوب «السفوماتو» الذي يذيب الحدود بين الألوان بطبقات رقيقة، واهتمام بالتشريح وحركة الجسد وانفعال الوجه.'},
+ botticelli:{ar:'ساندرو بوتيتشيلي',orig:'Sandro Botticelli',born:'نحو 1445',died:'1510',place:'فلورنسا',lead:'birth-of-venus',movements:['renaissance'],
+  bio:'رسّام فلورنسي عمل في بيئة مجتمع آل ميديتشي الثقافي. اشتهر بموضوعات أسطورية ودينية، وتراجعت شهرته بعد وفاته ثم عادت في القرن 19.',
+  style:'خط رشيق وأشكال رقيقة وألوان صافية، يغلب فيها الإيقاع الخطي على الحجم المجسّم.'},
+ monet:{ar:'كلود مونيه',orig:'Claude Monet',born:'1840',died:'1926',place:'باريس – جيفرني',lead:'impression-sunrise',movements:['impressionism'],
+  bio:'من مؤسسي الانطباعية. رسم المناظر في الهواء الطلق، وكرّر الموضوع الواحد في أوقات مختلفة من النهار ليتابع أثر الضوء. وقضى أواخر حياته في جيفرني حيث رسم حديقته.',
+  style:'ضربات فرشاة سريعة وألوان نقية متجاورة، وعناية بالضوء والجو أكثر من الخطوط الدقيقة.'},
+ munch:{ar:'إدفارد مونش',orig:'Edvard Munch',born:'1863',died:'1944',place:'لوتن – أوسلو',lead:'the-scream',movements:['symbolism'],
+  bio:'رسّام نرويجي عبّرت أعماله عن القلق والحب والموت. أنجز عدة نسخ من «الصرخة» بين لوحات ورسم ملوّن وطباعة حجرية.',
+  style:'خطوط متموجة وألوان مشبعة وأشكال مبسطة، تضع الحالة النفسية قبل دقة المنظر.'},
+ rembrandt:{ar:'رامبرانت فان راين',orig:'Rembrandt van Rijn',born:'1606',died:'1669',place:'لايدن – أمستردام',lead:'night-watch',movements:['dutch','baroque'],
+  bio:'رسّام وحفّار هولندي، اشتهر ببورتريهاته وبصوره الذاتية الكثيرة، وبقدرته على بناء المشهد بالضوء والعتمة.',
+  style:'تباين قوي بين الضوء والظلال، وضربات فرشاة سميكة في مواضع الضوء، وعمق إنساني في الوجوه.'},
+ dali:{ar:'سلفادور دالي',orig:'Salvador Dalí',born:'1904',died:'1989',place:'فيغيراس (إسبانيا)',lead:null,movements:['surrealism'],
+  bio:'رسّام إسباني من أبرز وجوه السريالية. جمع بين دقة أكاديمية في التفاصيل وصور مأخوذة من الأحلام.',
+  style:'تفاصيل واقعية دقيقة في مشاهد غير منطقية. أعماله محمية بحقوق النشر، ولذلك لا تُعرض صورها في هذا النموذج.'},
+ friedrich:{ar:'كاسبار ديفيد فريدريش',orig:'Caspar David Friedrich',born:'1774',died:'1840',place:'غرايفسفالد – دريسدن',lead:'wanderer',movements:['romanticism'],
+  bio:'رسّام ألماني من أهم رسّامي المناظر الرومانسيين. جعل الطبيعة موضوعًا للتأمل الروحي، وكثيرًا ما وضع شخصًا يُرى من الخلف أمام المشهد.',
+  style:'مناظر واسعة هادئة بأفق منخفض وضوء ناعم، وحضور صغير للإنسان أمام اتساع الطبيعة.'},
+ velazquez:{ar:'دييغو فيلاثكيث',orig:'Diego Velázquez',born:'1599',died:'1660',place:'إشبيلية – مدريد',lead:'las-meninas',movements:['baroque'],
+  bio:'رسّام بلاط ملك إسبانيا فيليب الرابع. اشتهر ببورتريهات العائلة المالكة وبمعالجته للهواء والضوء داخل الفراغ.',
+  style:'ضربات حرة وفضاء يبدو قابلًا للتنفس، وعناية بنظرات الشخوص وعلاقاتهم داخل الصورة.'},
+ klimt:{ar:'غوستاف كليمت',orig:'Gustav Klimt',born:'1862',died:'1918',place:'فيينا',lead:'the-kiss',movements:['symbolism'],
+  bio:'رسّام نمساوي كان أول رئيس لجمعية «انفصال فيينا» عام 1897. اشتهر بلوحاته التي تتداخل فيها الأشكال الواقعية مع الزخرفة المسطحة.',
+  style:'يجمع بين الوجه والجسد الواقعي وبين أسطح مزخرفة مطلية بالذهب، متأثرًا بالفن البيزنطي والياباني.'}
+};
+const PERIODS=[{id:'p1',ar:'قبل 1600',test:y=>y<1600},{id:'p2',ar:'القرن 17',test:y=>y>=1600&&y<1700},{id:'p3',ar:'القرنان 18 و19',test:y=>y>=1700&&y<1900},{id:'p4',ar:'القرن 20',test:y=>y>=1900}];
+const WORKS=[
+{id:'starry-night',poem:'سماءٌ لا تهدأ، وقريةٌ تنام تحتها كأن شيئًا لم يكن.',img:'starry-night',titleAr:'الليلة المرصعة بالنجوم',orig:'The Starry Night',artist:'van-gogh',year:1889,date:'يونيو 1889',medium:'زيت على قماش',dims:'73.7 × 92.1 سم',where:'متحف الفن الحديث (MoMA)، نيويورك',place:'سان ريمي دو بروفانس، فرنسا',movement:'postimpressionism',
+ intro:'رسم فان غوخ هذه اللوحة في يونيو 1889، بعد أسابيع من دخوله مصحة سان بول دو موزول قرب سان ريمي دو بروفانس في جنوب فرنسا. وهي اليوم من أكثر لوحات العالم تداولًا.',
+ story:['دخل فان غوخ المصحة طوعًا في مايو 1889 بعد أزمة نفسية حادة في آرل. أُتيح له أن يرسم هناك، فصارت النافذة والحقول القريبة موضوعه.','كتب إلى أخيه ثيو عن منظر رآه من نافذته قبل شروق الشمس بوقت طويل، لم يكن فيه سوى نجمة الصباح وقد بدت كبيرة جدًا. غير أن اللوحة نفسها لم تُرسم أمام المنظر على الأرجح، بل من الذاكرة، وتذكر مراجع المتحف أن القرية في أسفلها من خياله.','اقتنى متحف الفن الحديث في نيويورك العمل عام 1941 ضمن وصية ليلي ب. بليس.'],
+ reading:['تنقسم اللوحة إلى سماء متحركة تشغل الجزء الأكبر، وتلال زرقاء، وقرية هادئة في الأسفل. ويوحّد فان غوخ هذه الأجزاء بضربات فرشاة قصيرة سميكة تتبع اتجاه الحركة، فتبدو السماء كأنها تجري.','تقابل الزرقة العميقة بقعٌ صفراء وبرتقالية للنجوم والقمر، فيلتقي لونان متكاملان في أشد درجاتهما. أما السرو في اليسار فيصعد فوق خط الأفق ويصل الأرض بالسماء.'],
+ details:[{t:'شجرة السرو',d:'تلتف داكنة كأنها لهب. يرتبط السرو في تقاليد البحر المتوسط بالمقابر، ويعدّه بعض الدارسين رابطًا بين الأرض والسماء.',r:{x:0,y:14,w:30,h:86}},{t:'القرية وبرج الكنيسة',d:'بيوت صغيرة يتوسطها برج مرتفع. يلاحظ بعض الدارسين أنه أقرب إلى أبراج الكنائس الهولندية منه إلى أبراج بروفانس.',r:{x:28,y:62,w:52,h:34}},{t:'القمر والنجوم',d:'يحيط بكل نجمة وبالهلال هالات من ضربات متحدة المركز. ويُحصي الباحثون في اللوحة أحد عشر نجمًا.',r:{x:60,y:2,w:38,h:36}}],
+ interp:[{t:'يرى بعض مؤرخي الفن أن حيوية السماء تعكس حالة فان غوخ الانفعالية في تلك الفترة.',a:'قراءة سيرية شائعة، ويتحفظ عليها آخرون'},{t:'ويميل آخرون إلى قراءة شكلية: تجربة في اللون والإيقاع تتجاوز ما رآه الفنان فعلًا.',a:'قراءة شكلية'},{t:'وقارنت بعض الدراسات العلمية الحديثة بنية الدوامات في السماء بأنماط الاضطراب في الموائع. وهي مقاربة علمية لا تدّعي تفسير قصد الفنان.',a:'مقاربة علمية، وليست حكمًا فنيًا'}],
+ related:[['cafe-terrace','لوحة ليلية من آرل في العام السابق، وهي أول لوحاته التي تظهر فيها نجوم'],['great-wave','أحب فان غوخ المطبوعات اليابانية وجمع منها الكثير'],['the-scream','يقارن النقاد كثيرًا بين السماء المتموجة هنا وسماء مونش']],
+ src:{extra:[['رسائل فان غوخ','https://vangoghletters.org']]}},
+{id:'girl-pearl-earring',poem:'التفاتةٌ واحدة، وسؤالٌ لا يبرح الوجه.',img:'girl-pearl-earring',titleAr:'فتاة بقرط اللؤلؤ',orig:'Meisje met de parel · Girl with a Pearl Earring',artist:'vermeer',year:1665,date:'نحو 1665',medium:'زيت على قماش',dims:'44.5 × 39 سم',where:'متحف مورتسهاوس، لاهاي',place:'دلفت، هولندا',movement:'dutch',
+ intro:'لوحة صغيرة رسمها يوهانس فيرمير نحو عام 1665، يلتفت فيها وجه فتاة نحو المشاهد، وعليها عمامة زرقاء وقرط لؤلؤ.',
+ story:['تنتمي اللوحة إلى نوع يسميه الهولنديون «ترونيه»، أي دراسة لوجه أو ملامح لا بورتريه لشخص معروف. ولا يُعرف من كانت النموذج.','بيعت اللوحة في مزاد عام 1881 بمبلغ زهيد نحو غلدنين. ثم أوصى بها مقتنيها إلى متحف مورتسهاوس في لاهاي عام 1902.'],
+ reading:['خلفية داكنة مسطحة تبرز الوجه، والضوء يأتي من اليسار فيرسم الخد والشفتين وبريق العين واللؤلؤة. وللعمامة الزرقاء أثر بصري كبير، وقد استُخدم فيها الأزرق المستخرج من حجر اللازورد، وكان من أغلى الأصباغ في ذلك الوقت.'],
+ details:[{t:'القرط',d:'بضع لمسات بيضاء تكفي لتوحي بلؤلؤة تعكس الضوء، دون أن يظهر أي خطاف يعلّقها.'},{t:'الشفتان والنظرة',d:'نقطة ضوء صغيرة على الشفة السفلى وأخرى في العين تمنحان الوجه حياة، وتبقيان تعبيره غير محدد.'}],
+ interp:[{t:'اقترح الفيزيائي فنسنت إيكه عام 2014 أن القرط قد لا يكون لؤلؤة حقيقية بل قصديرًا مصقولًا، لأن حجمه أكبر من أي لؤلؤة معروفة آنذاك. ولا يزال الرأي موضع نقاش.',a:'رأي فنسنت إيكه، 2014'}],
+ related:[['milkmaid','العمل لنفس الفنان: ضوء النافذة نفسه في مشهد داخلي'],['night-watch','من العصر الذهبي الهولندي نفسه، لكن بالعتمة والحركة والحجم الكبير'],['mona-lisa','وجه يلتفت إلى المشاهد: بورتريه عند ليوناردو، وترونيه عند فيرمير']],
+ src:{extra:[]}},
+{id:'great-wave',poem:'موجةٌ تمدّ أصابعها، وجبلٌ صغير يحفظ الصمت.',img:'great-wave',titleAr:'الموجة الكبرى قبالة كاناغاوا',orig:'神奈川沖浪裏 · The Great Wave off Kanagawa',artist:'hokusai',year:1831,date:'نحو 1831',medium:'طباعة بقوالب خشبية، حبر وألوان على ورق',dims:'نحو 25 × 38 سم، تتفاوت قليلًا بين النسخ',where:'نسخ في متاحف عدة منها المتروبوليتان في نيويورك',place:'إيدو، اليابان',movement:'ukiyoe',
+ intro:'طبعة خشبية أنجزها هوكوساي نحو عام 1831، وهي من سلسلة «ستة وثلاثين منظرًا لجبل فوجي».',
+ story:['تُعرف خطأً باسم التسونامي، والأدق أنها موجة بحرية عاتية. تظهر فيها ثلاثة قوارب صيد، وجبل فوجي صغيرًا في البعيد.','وهي طبعة، فلها نسخ كثيرة في متاحف مختلفة وليس لها أصل وحيد. واستُخدم فيها صبغ الأزرق البروسي المستورد، وكان جديدًا في اليابان آنذاك.'],
+ reading:['يقوم التكوين على منحنى الموجة الذي يطوّق جبل فوجي الصغير، فيبدو الجبل ثابتًا في قلب الحركة. وتتحول الرغوة إلى أصابع، وتتوازن الخطوط الداكنة مع مساحات لونية مسطحة.'],
+ details:[{t:'جبل فوجي',d:'قمته البيضاء تتوسط الفراغ تحت قوس الموجة، فتبدو الموجة أعلى منه.'},{t:'القوارب',d:'ثلاثة قوارب يحني فيها الصيادون أجسادهم ويبدون صغارًا جدًا أمام الموجة.'}],
+ interp:[{t:'يقرأ كثير من الدارسين المشهد بوصفه مواجهة بين قوة الطبيعة وهشاشة الإنسان. وهي قراءة حديثة النزعة، وقد لا تطابق قصد الفنان.',a:'قراءة شائعة، وليست من كلام هوكوساي'}],
+ related:[['starry-night','أُعجب فان غوخ بالمطبوعات اليابانية وجمع منها الكثير'],['impression-sunrise','اهتم مونيه بالفن الياباني واقتنى منه مجموعة']],
+ src:{extra:[]}},
+{id:'mona-lisa',poem:'ابتسامةٌ تتأخر قليلًا عن الجواب.',img:'mona-lisa',titleAr:'الموناليزا',orig:'La Gioconda · Mona Lisa',artist:'leonardo',year:1503,date:'نحو 1503 – 1519',medium:'زيت على لوح من خشب الحور',dims:'77 × 53 سم',where:'متحف اللوفر، باريس',place:'فلورنسا، إيطاليا (بدأ العمل)',movement:'renaissance',
+ intro:'بورتريه رسمه ليوناردو دا فينشي بدءًا من نحو عام 1503 وعاد إليه سنوات، ويحفظه متحف اللوفر في باريس.',
+ story:['يُعتقد على نطاق واسع أن النموذج هي ليزا غيرارديني، زوجة التاجر الفلورنسي فرانشيسكو ديل جيوكوندو. ومن هنا اسمها الإيطالي «لا جيوكوندا».','ويُرجّح أن ليوناردو احتفظ بها معه حتى وفاته في فرنسا. وسُرقت من اللوفر عام 1911 واستُردت عام 1913.'],
+ reading:['اعتمد ليوناردو أسلوب «السفوماتو»: طبقات رقيقة شفافة تذيب الحدود بين الضوء والظل، فلا يظهر لزاويتي الفم والعينين حدّ قاطع، وهو ما يمنح التعبير غموضه. وخلف الجالسة منظر طبيعي بعيد يضيف عمقًا هوائيًا إلى الصورة.'],
+ details:[{t:'اليدان',d:'اليدان مسترخيتان فوق مسند المقعد، ويهتم بهما الدارسون بوصفهما جزءًا من بناء التكوين الهرمي.'},{t:'المنظر البعيد',d:'طرق وجسر وسلاسل جبلية زرقاء تتلاشى في الضباب، وتتفاوت خطوط الأفق على جانبي الرأس.'}],
+ interp:[{t:'تعددت تفسيرات الابتسامة، من ابتسامة مجاملة إلى انعكاس لحالة داخلية. ولا يوجد تفسير حاسم يستند إلى كلام الفنان نفسه.',a:'تفسيرات متعددة بلا إجماع'}],
+ related:[['birth-of-venus','من عصر النهضة الإيطالية نفسه، لكن بمنهج خطي أسطوري'],['girl-pearl-earring','وجه يلتفت إلى المشاهد في سياق مختلف']],
+ src:{extra:[]}},
+{id:'birth-of-venus',poem:'من الصدفة يبدأ الجمال، ومن الريح يصل إلى الشاطئ.',img:'birth-of-venus',titleAr:'ميلاد فينوس',orig:'La nascita di Venere · The Birth of Venus',artist:'botticelli',year:1485,date:'نحو 1484 – 1486',medium:'ألوان تمبرا على قماش',dims:'172.5 × 278.9 سم',where:'معرض أوفيتزي، فلورنسا',place:'فلورنسا، إيطاليا',movement:'renaissance',
+ intro:'لوحة ضخمة لبوتيتشيلي تصوّر الإلهة فينوس وهي تصل إلى الشاطئ على صدفة، من أشهر أعمال عصر النهضة الإيطالية.',
+ story:['يُرجّح أن اللوحة طُلبت من أحد فروع عائلة ميديتشي في فلورنسا. وتصوّر على اليسار زفيروس إله الريح الغربية ومعه عروسه، وعلى اليمين إلهة الفصول تهمّ بتغطية فينوس.'],
+ reading:['تقف فينوس في وسط التكوين وجسدها طويل رشيق، وتقوم الخطوط المنحنية لشعرها والثياب والأمواج بدور إيقاعي. والألوان صافية وخفيفة، والمنظور قليل العمق لا يحاكي الواقع بدقة.'],
+ details:[{t:'الصدفة',d:'تحمل فينوس إلى الشاطئ وتشكل قاعدة التكوين.'},{t:'الرياح',d:'زفيروس وزوجته تنفخان فتتساقط الورود في الهواء.'}],
+ interp:[{t:'ربط كثير من الدارسين بين اللوحة والأفكار الأفلاطونية في بلاط ميديتشي، ورأوا في فينوس رمزًا للجمال المثالي. وتختلف الآراء في تفاصيل هذه القراءة.',a:'قراءة شائعة بين الدارسين'}],
+ related:[['mona-lisa','عصر النهضة الإيطالية'],['the-kiss','لوحة أخرى تضع الجسد والزخرفة في مقام واحد']],
+ src:{extra:[]}},
+{id:'impression-sunrise',poem:'ضوءٌ يولد في الضباب قبل أن يُسمّى.',img:'impression-sunrise',titleAr:'انطباع، شروق الشمس',orig:'Impression, soleil levant · Impression, Sunrise',artist:'monet',year:1872,date:'1872',medium:'زيت على قماش',dims:'48 × 63 سم',where:'متحف مارموتان مونيه، باريس',place:'ميناء لوهافر، فرنسا',movement:'impressionism',
+ intro:'منظر لميناء لوهافر في الصباح الباكر، عرضه مونيه عام 1874 في معرض الفنانين المستقلين، فسمّى ناقدٌ المجموعة «الانطباعيين» على سبيل التهكم.',
+ story:['كتب الناقد لويس لوروا مقالًا ساخرًا عن المعرض في صحيفة «لو شاريفاري»، واستعار من عنوان هذه اللوحة كلمة «انطباعيين». وتبنّى الفنانون الاسم لاحقًا.'],
+ reading:['تبدو الأشكال في اللوحة كتلًا لونية مبسطة: القوارب والرافعات في الضباب، وشمس برتقالية صغيرة تنعكس على الماء بخطوط أفقية. والشمس والسماء متقاربتان في درجة السطوع، فتبدو الشمس كأنها تهتز أمام العين.'],
+ details:[{t:'الشمس',d:'قرص برتقالي صغير أقرب إلى بقعة لونية، لكنه أشد مواضع اللوحة ضياءً.'},{t:'انعكاس الماء',d:'ضربات أفقية سريعة توحي بالتموج دون رسم كل موجة.'}],
+ interp:[{t:'يرى كثير من النقاد أن اللوحة تعلن عن انتقال الاهتمام من الموضوع إلى الإحساس البصري العابر.',a:'قراءة نقدية شائعة'}],
+ related:[['great-wave','اهتم مونيه بالمطبوعات اليابانية'],['starry-night','فان غوخ: لون معبّر بعد درس الانطباعية']],
+ src:{extra:[]}},
+{id:'the-scream',poem:'حين تضيق السماء، يصير الصوت لونًا.',img:'the-scream',titleAr:'الصرخة',orig:'Skrik · The Scream',artist:'munch',year:1893,date:'1893',medium:'تمبرا وألوان طباشيرية على الكرتون',dims:'91 × 73.5 سم',where:'المتحف الوطني، أوسلو',place:'أوسلو، النرويج',movement:'symbolism',
+ intro:'أشهر أعمال إدفارد مونش. أنجز الفنان منها أكثر من نسخة بين لوحات ورسم ملوّن وطباعة حجرية، وهذه نسخة عام 1893.',
+ story:['كتب مونش في يومياته عام 1892 عن نزهة عند الغروب تحولت فيها السماء إلى أحمر دموي، وأنه شعر بصرخة لا نهائية تعبر الطبيعة.','ويتجادل الدارسون في ما إذا كان الشخص في اللوحة يصرخ أو يسدّ أذنيه عن صرخة الطبيعة.'],
+ reading:['خطوط متموجة تمتد من السماء إلى الماء وتلتف حول الشخص، وجسر مستقيم بخطوط منظور حادة يدفع عين المشاهد إلى الأمام. الألوان مشبعة، والوجه مبسّط كجمجمة.'],
+ details:[{t:'الشخص في المقدمة',d:'ملامح مبسطة ويدان على الوجه، تتحول فيها الحالة النفسية إلى شكل.'},{t:'الشخصان على الجسر',d:'يتابعان السير بهدوء، فتتباين لا مبالاتهما مع انفعال المقدمة.'}],
+ interp:[{t:'يعدّ كثير من الدارسين اللوحة مثالًا على التعبير عن القلق الحديث، ويقرؤونها بوصفها صورة لحالة داخلية لا لمنظر بعينه.',a:'قراءة شائعة'}],
+ related:[['starry-night','سماء متموجة وتعبير لوني عن الإحساس'],['the-kiss','رمزية أوروبية في المرحلة نفسها تقريبًا']],
+ src:{extra:[]}},
+{id:'night-watch',poem:'عتمةٌ تتسع، وبقعة ضوء تمشي.',img:'night-watch',titleAr:'الحراسة الليلية',orig:'De Nachtwacht · The Night Watch',artist:'rembrandt',year:1642,date:'1642',medium:'زيت على قماش',dims:'نحو 363 × 437 سم',where:'متحف ريكس، أمستردام',place:'أمستردام، هولندا',movement:'dutch',
+ intro:'بورتريه جماعي ضخم لفرقة حرس مدني بقيادة الكابتن فرانس بانينغ كوك، رسمه رامبرانت عام 1642.',
+ story:['اسم «الحراسة الليلية» لاحق، وأطلقه الناس لأن طبقة الورنيش القديمة أظلمت اللوحة. وبعد تنظيفها ظهر أن المشهد في وضح النهار.','قُصّت أطراف اللوحة عام 1715 حين نُقلت إلى دار البلدية في أمستردام.'],
+ reading:['بدل صف جامد من الوجوه، أظهر رامبرانت الفرقة وهي تتحرك. الضوء يلتقط الكابتن وملازمه والفتاة الصغيرة في المنتصف، بينما يظل بقية المشهد في الظل.'],
+ details:[{t:'القائد والملازم',d:'يتقدمان إلى الأمام، ويقع ظل يد الكابتن على سترة الملازم.'},{t:'الفتاة المضيئة',d:'شخصية رمزية يرى فيها بعض الدارسين شعارًا للفرقة.'}],
+ interp:[{t:'ترى بعض القراءات أن الفتاة تحمل رموزًا تشير إلى الفرقة، وتبقى هذه القراءة مجرد اجتهاد.',a:'اجتهاد بعض الدارسين'}],
+ related:[['girl-pearl-earring','العصر الذهبي الهولندي: ضوء هادئ وحجم صغير'],['las-meninas','لوحة ضخمة من القرن نفسه تتحرك فيها الشخوص داخل مشهد واحد']],
+ src:{extra:[]}},
+{id:'milkmaid',poem:'خيطٌ أبيض من الصبر ينسكب في إناء الصباح.',img:'milkmaid',titleAr:'ساكبة الحليب',orig:'Het melkmeisje · The Milkmaid',artist:'vermeer',year:1657,date:'نحو 1657 – 1658',medium:'زيت على قماش',dims:'45.5 × 41 سم',where:'متحف ريكس، أمستردام',place:'دلفت، هولندا',movement:'dutch',
+ intro:'مشهد داخلي هادئ لامرأة تصبّ الحليب في إناء، من أشهر أعمال فيرمير.',
+ story:['تقدّم اللوحة عملًا يوميًا بسيطًا بوقار هادئ، دون سرد أو مناسبة.'],
+ reading:['ضوء النافذة يلمس الوجه والذراعين والخبز، وتتناثر نقاط ضوء صغيرة على الخبز والإناء. والجدار الفارغ يترك المساحة للحركة الصغيرة.'],
+ details:[{t:'الخبز',d:'نقاط من اللون الأصفر والأبيض تعطي الخبز ملمسه.'},{t:'تيار الحليب',d:'خيط رفيع يتدفق في الإناء، وتعتني به اللوحة عنايتها بالوجه.'}],
+ interp:[{t:'يرى بعضهم في المشهد تكريمًا للعمل المنزلي، ويربطه آخرون برسائل أخلاقية شائعة في الفن الهولندي. ويبقى المعنى مفتوحًا.',a:'قراءات متعددة'}],
+ related:[['girl-pearl-earring','العمل لنفس الفنان'],['night-watch','العصر الذهبي الهولندي نفسه']],
+ src:{extra:[]}},
+{id:'wanderer',poem:'جبلٌ، وضباب، وإنسانٌ يتعلّم الصِّغَر.',img:'wanderer',titleAr:'المتجوّل فوق بحر الضباب',orig:'Der Wanderer über dem Nebelmeer',artist:'friedrich',year:1818,date:'نحو 1818',medium:'زيت على قماش',dims:'94.8 × 74.8 سم',where:'قاعة هامبورغ للفنون (كونستهاله)',place:'ألمانيا',movement:'romanticism',
+ intro:'رجل يقف على صخرة ويداه خلفه، يتأمل بحرًا من الضباب بين القمم. صارت اللوحة رمزًا للرومانسية.',
+ story:['يُرى الرجل من الخلف، وهي تقنية يكررها فريدريش لتدعو المشاهد إلى أن يقف مكانه. ولا يوجد اتفاق على هوية الرجل.'],
+ reading:['الرجل في مركز التكوين تقريبًا، والقمم تتراجع نحو الأفق في طبقات من الضباب. والأفق المنخفض والسماء الصافية يعطيان إحساسًا بالاتساع والصمت.'],
+ details:[{t:'الرجل من الخلف',d:'يختفي وجهه، فيحل المشاهد محله.'},{t:'الضباب',d:'يملأ الوادي ويخفي المسافات، فلا تُعرف حدود المنظر.'}],
+ interp:[{t:'يُقرأ المشهد غالبًا بوصفه تأملًا في الصغر أمام اتساع الطبيعة، وقراءات أخرى تربطه بتجربة روحية. ولم يترك الفنان تفسيرًا مكتوبًا.',a:'قراءة شائعة'}],
+ related:[['starry-night','طبيعة تصبح مرآة لحالة داخلية'],['the-scream','منظر واسع وقلق إنساني']],
+ src:{extra:[]}},
+{id:'las-meninas',poem:'من ينظر إلى من؟ والمرآة تعرف.',img:'las-meninas',titleAr:'الوصيفات',orig:'Las Meninas',artist:'velazquez',year:1656,date:'1656',medium:'زيت على قماش',dims:'318 × 276 سم',where:'متحف برادو، مدريد',place:'مدريد، إسبانيا',movement:'baroque',
+ intro:'مشهد في مرسم داخل القصر الملكي، تتوسطه الأميرة الصغيرة مارغريتا تيريزا ومن حولها وصيفاتها، ويظهر فيه الرسام نفسه أمام لوحة كبيرة.',
+ story:['في مرآة الجدار الخلفي تنعكس صورتان تُعتقد أنهما للملك فيليب الرابع وزوجته. وهكذا يتساءل المشاهد: من ينظر إلى من؟'],
+ reading:['الضوء من النافذة اليمنى يبني طبقات من الفراغ حتى الباب المفتوح في الخلف. وتتوزع النظرات بين الأميرة والمشاهد والمرآة، فتتشابك العلاقات.'],
+ details:[{t:'المرآة',d:'مستطيل صغير ساطع في الخلفية يضيف المشهد الغائب.'},{t:'الرسام',d:'يقف فيلاثكيث على اليسار بفرشاته. ويُروى أن الصليب الأحمر على صدره أُضيف إلى اللوحة بعد إنجازها.'}],
+ interp:[{t:'يعدّها كثير من الدارسين تأملًا في الرؤية والتمثيل، ويربطها آخرون بمكانة الرسام في البلاط. وتعددت التفسيرات منذ قرون.',a:'تفسيرات متعددة'}],
+ related:[['night-watch','لوحة جماعية ضخمة من القرن نفسه'],['girl-pearl-earring','وجه ينظر إلى المشاهد']],
+ src:{extra:[]}},
+{id:'the-kiss',poem:'ذهبٌ يلفّ عناقًا، وحافةٌ تنتظر.',img:'the-kiss',titleAr:'القبلة',orig:'Der Kuss · The Kiss',artist:'klimt',year:1907,date:'1907 – 1908',medium:'زيت وأوراق ذهب على قماش',dims:'180 × 180 سم',where:'قصر بلفيدير، فيينا',place:'فيينا، النمسا',movement:'symbolism',
+ intro:'عمل مربع الشكل لغوستاف كليمت يصوّر عناقًا بين رجل وامرأة على أرضية مغطاة بأوراق الذهب، من ذروة ما يسمى «المرحلة الذهبية» في عمله.',
+ story:['عُرضت اللوحة في معرض «كونستشاو» في فيينا عام 1908، واشترتها الدولة النمساوية من المعرض نفسه لتدخل مجموعة قصر بلفيدير.'],
+ reading:['يلتحم الجسدان في كتلة واحدة، وتتحول ثيابهما إلى زخارف مسطحة: مستطيلات للرجل ودوائر وأزهار للمرأة. وتتقابل واقعية الوجهين واليدين مع تسطيح الأرضية والثياب.'],
+ details:[{t:'الوجهان',d:'الجزء الواقعي الوحيد تقريبًا في اللوحة.'},{t:'حافة المرج',d:'يلاحظ بعض الدارسين أن الأرضية الزهرية تنتهي عند حافة تقترب منها قدما المرأة.'}],
+ interp:[{t:'ترى بعض القراءات في اللوحة احتفاء بالحب، وتراها أخرى عملًا عن الذوبان في الآخر. ولا يوجد تفسير نهائي.',a:'قراءات متعددة'}],
+ related:[['the-scream','رمزية أوروبية في المرحلة نفسها'],['birth-of-venus','جسد مثالي وزخرفة']],
+ src:{extra:[]}},
+{id:'cafe-terrace',poem:'مصباحٌ يحرس الليل، ونجومٌ فوقه تتعلم الجلوس.',img:'cafe-terrace',titleAr:'شرفة مقهى في الليل',orig:'Terrasse du café le soir · Café Terrace at Night',artist:'van-gogh',year:1888,date:'سبتمبر 1888',medium:'زيت على قماش',dims:'80.7 × 65.3 سم',where:'متحف كرولر مولر، أوتيرلو',place:'آرل، فرنسا',movement:'postimpressionism',
+ intro:'رسمها فان غوخ في آرل، ويُعدّها كثيرون أول لوحاته التي تظهر فيها نجوم في السماء.',
+ story:['رسم المشهد مساءً في ساحة آرل مضاءً بمصباح غاز، ووكتب في رسائله عن رغبته في رسم المشاهد الليلية دون استعمال الأسود.'],
+ reading:['يتقابل الأصفر الدافئ لمصباح الشرفة مع الأزرق العميق للسماء. وخطوط الشارع تسحب العين إلى عمق المشهد.'],
+ details:[{t:'المصباح',d:'مصدر الضوء الأصفر الذي يبني الصورة.'},{t:'النجوم',d:'تتناثر فوق البيوت كأنها ورود صغيرة.'}],
+ interp:[{t:'يربط بعض الدارسين اللوحة بالمشهد الأخير للمسيح مع الحواريين في الشرفة، لكنها قراءة خلافية.',a:'قراءة خلافية'}],
+ related:[['starry-night','اللوحة الليلية التالية بعد عام'],['night-watch','ضوء دافئ يخرج من العتمة']],
+ src:{extra:[]}},
+{id:'persistence-of-memory',poem:'ساعاتٌ تذوب، والذاكرة تصرّ.',img:null,titleAr:'إصرار الذاكرة',orig:'La persistencia de la memoria · The Persistence of Memory',artist:'dali',year:1931,date:'1931',medium:'زيت على قماش',dims:'24.1 × 33 سم',where:'متحف الفن الحديث (MoMA)، نيويورك',place:'إسبانيا',movement:'surrealism',
+ intro:'لوحة صغيرة لسلفادور دالي تظهر فيها ساعات رخوة في منظر صحراوي. محمية بحقوق النشر، ولذلك لا تُعرض صورتها في هذا النموذج.',
+ story:['لا يعرض هذا النموذج الصورة لأن حقوق الاستخدام لم تُحسم. وفي النسخة النهائية تُعرض الصورة وفق رخصة رسمية من جهة الحقوق.'],
+ reading:['تجمع اللوحة بين تفاصيل واقعية دقيقة وتركيب غير منطقي: ساعات تنسدل كأنها مادة لينة على شجرة وصندوق وكائن ملقى على الأرض.'],
+ details:[{t:'الساعات الرخوة',d:'العنصر الذي ارتبطت به اللوحة في الذاكرة العامة.'}],
+ interp:[{t:'وفسّرها كثيرون بوصفها تأملًا في الزمن في الحلم. وقال دالي نفسه إن الفكرة جاءته من صورة جبن ذائب، لكن القراءات تتعدد.',a:'تفسيرات متعددة'}],
+ related:[['starry-night','فن ينتقل من الواقع إلى الإحساس والحلم']],
+ src:{extra:[]}}
+];
+</script>
+<script>const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const norm=s=>String(s||'').toLowerCase().replace(/[ً-ٰٟـ]/g,'').replace(/[أإآٱ]/g,'ا').replace(/ى/g,'ي').replace(/ة/g,'ه').replace(/[ؤئ]/g,m=>m==='ؤ'?'و':'ي').replace(/\s+/g,' ').trim();
+const W=id=>WORKS.find(w=>w.id===id), A=id=>ARTISTS[id], M=id=>MOVEMENTS[id];
+const perOf=w=>PERIODS.find(p=>p.test(w.year));
+const worksBy=a=>WORKS.filter(w=>w.artist===a), worksIn=m=>WORKS.filter(w=>w.movement===m);
+const artistsIn=m=>Object.keys(ARTISTS).filter(a=>ARTISTS[a].movements.includes(m));
+const go_=(p)=>`href="#" data-go="${p}"`;
+/* ---------- brand ---------- */
+function sym(size=34,sf=3.2){const k=sf,gx=sf+k/1,cph=Math.cos(Math.atan(76/108)),gy=(sf/2+k)/cph,ty=x=>98+(22-98)/108*(x-6),yl=ty(33),gxx=sf/2+k+sf/2;
+ const frame=`M33,${(yl-gy).toFixed(2)} V15 H87 V105 H33 V${(yl+gy).toFixed(2)}`,xa=87-gxx,xb=87+gxx;
+ const th=`M6,98 L33,${yl.toFixed(2)} L${xa.toFixed(2)},${ty(xa).toFixed(2)} M${xb.toFixed(2)},${ty(xb).toFixed(2)} L114,22`;
+ return `<svg width="${size}" height="${size}" viewBox="0 0 120 120" aria-hidden="true"><path d="${frame}" fill="none" stroke="currentColor" stroke-width="${sf}"/><path d="${th}" fill="none" stroke="var(--thread)" stroke-width="${sf}" stroke-linecap="round" stroke-linejoin="round"/></svg>`}
+/* procedural night sky: our own flow-field brushwork, inspired by swirling night skies, not a copy of any painting */
+function makeSky(W=1600,H=900){const c=document.createElement('canvas');c.width=W;c.height=H;const x=c.getContext('2d');let s=11;const R=()=>(s=(s*16807)%2147483647)/2147483647;
+ x.fillStyle='#0b2347';x.fillRect(0,0,W,H);
+ const C=[[W*.34,H*.38,250],[W*.7,H*.3,190],[W*.52,H*.74,150]];
+ const ang=(px,py)=>{let a=Math.sin(px/200)*.8+Math.cos(py/160)*.8+Math.sin((px+py)/340)*.6;C.forEach(([sx,sy,r])=>{const dx=px-sx,dy=py-sy,d=Math.hypot(dx,dy),k=Math.exp(-(d*d)/(2*r*r*.9));a=a*(1-k)+(Math.atan2(dy,dx)+Math.PI/2+d/55)*k});return a};
+ const cols=['#0e2542','#14305a','#1e3a8a','#2563eb','#3b5fb5','#7da3d8'];
+ for(let i=0;i<11000;i++){let px=R()*W,py=R()*H,w=2+R()*3.4;x.strokeStyle=cols[Math.floor(Math.pow(R(),1.7)*cols.length)];x.globalAlpha=.3+R()*.5;x.lineWidth=w;x.lineCap='round';x.beginPath();x.moveTo(px,py);const n=3+Math.floor(R()*3);for(let k=0;k<n;k++){const a=ang(px,py);px+=Math.cos(a)*7;py+=Math.sin(a)*7;x.lineTo(px,py)}x.stroke()}
+ x.globalAlpha=1;
+ const halo=(sx,sy,r0,r1,col)=>{for(let r=r0;r<r1;r+=6){const al=.9*(1-(r-r0)/(r1-r0)),steps=Math.floor(r*.9);for(let k=0;k<steps;k++){const t=k/steps*Math.PI*2+R()*.1,len=.5+R()*.3;x.strokeStyle=col;x.globalAlpha=al*(.55+R()*.45);x.lineWidth=2.4+R()*1.6;x.beginPath();x.arc(sx,sy,r+R()*2,t,t+len/r*8);x.stroke()}}x.globalAlpha=1;x.fillStyle=col;x.beginPath();x.arc(sx,sy,r0*.8,0,7);x.fill()};
+ [[W*.14,H*.2,9,58],[W*.5,H*.14,11,70],[W*.86,H*.62,8,52],[W*.26,H*.7,7,44],[W*.62,H*.5,8,50],[W*.92,H*.2,7,42]].forEach(([sx,sy,a,b])=>halo(sx,sy,a,b,R()>.4?'#f2c94c':'#f6e9a8'));
+ const mx=W*.82,my=H*.2;halo(mx,my,22,84,'#f2c94c');x.fillStyle='#f2c94c';x.beginPath();x.arc(mx,my,34,-Math.PI*.62,Math.PI*.62);x.arc(mx+17,my,28,Math.PI*.62,-Math.PI*.62,true);x.fill();
+ return c.toDataURL('image/jpeg',.8)}
+function applySky(){setTimeout(()=>{try{document.documentElement.style.setProperty('--sky','url('+makeSky()+')')}catch(_){}},30)}
+function weave(){const fr=[];let x=24;[[54,90,28],[72,112,14],[54,90,32],[90,124,8],[54,90,28],[72,112,16],[54,90,32],[90,124,10],[54,90,26],[72,112,14],[54,90,30],[54,90,24]].forEach(([w,h,y])=>{fr.push([x,y,w,h]);x+=w+46});
+ const X0=0,X1=1400,Y0=150,Y1=14,m=(Y1-Y0)/(X1-X0),yy=u=>Y0+m*(u-X0),g=7,cross=[];
+ fr.forEach(([x,y,w,h])=>[x,x+w].forEach(e=>{const v=yy(e);if(v>y&&v<y+h)cross.push(e)}));cross.sort((a,b)=>a-b);const kind={};cross.forEach((e,i)=>kind[e]=i%2?'under':'over');let out='';
+ fr.forEach(([x,y,w,h])=>{const lo=kind[x]==='over',ro=kind[x+w]==='over';
+  if(!lo&&!ro)out+=`<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="none" stroke="currentColor" stroke-width="1.2"/>`;
+  else{let d=lo?`M${x},${(yy(x)-g).toFixed(1)} V${y} H${x+w}`:`M${x},${y+h} V${y} H${x+w}`;d+=ro?` V${(yy(x+w)-g).toFixed(1)} M${x+w},${(yy(x+w)+g).toFixed(1)} V${y+h} H${x}`:` V${y+h} H${x}`;if(lo)d+=` V${(yy(x)+g).toFixed(1)}`;out+=`<path d="${d}" fill="none" stroke="currentColor" stroke-width="1.2"/>`}});
+ let cur_=X0,d='';cross.filter(e=>kind[e]==='under').forEach(e=>{d+=`M${cur_},${yy(cur_).toFixed(1)} L${e-g},${yy(e-g).toFixed(1)} `;cur_=e+g});d+=`M${cur_},${yy(cur_).toFixed(1)} L${X1},${Y1}`;
+ return `<svg class="weave" viewBox="0 0 1400 170" role="img" aria-label="خيط واحد يمرّ بين أطر اللوحات، فوق إطار وتحت آخر" preserveAspectRatio="xMidYMid meet">${out}<path d="${d}" fill="none" stroke="var(--thread)" stroke-width="1.8" stroke-linecap="round"/></svg>`}
+const plural=n=>n===1?'لوحة':n===2?'لوحتان':n<=10?n+' لوحات':n+' لوحة';
+const wordmark='<span class="arw" lang="ar">و<i>َ</i>شيج</span>';
+const sepSvg=`<svg class="thread-sep" viewBox="0 0 600 22" preserveAspectRatio="none" aria-hidden="true"><line x1="0" y1="11" x2="286" y2="11" stroke="var(--hair)"/><line x1="314" y1="11" x2="600" y2="11" stroke="var(--hair)"/><path d="M288,19 L312,3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" fill="none"/></svg>`;
+const ico={search:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l5 5"/></svg>',menu:'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7h18M3 12h18M3 17h18"/></svg>',x:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 5l14 14M19 5L5 19"/></svg>',theme:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><path d="M12 4v16" /><path d="M12 4a8 8 0 010 16z" fill="currentColor"/></svg>',zoom:'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>',arr:'<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 12H5M11 6l-6 6 6 6"/></svg>'};
+/* ---------- images ---------- */
+function img(w,{eager=false}={}){const m=IMGS[w.img];return `<img src="img/${w.img}.jpg" alt="${esc(w.titleAr+'، '+A(w.artist).ar)}" width="${m.w}" height="${m.h}" ${eager?'fetchpriority="high"':'loading="lazy"'} decoding="async" onload="this.classList.add('ld')" onerror="this.classList.add('ld')">`}
+function mat(w,cls='',opt){return w.img?`<div class="mat ${cls}">${img(w,opt)}</div>`:`<div class="mat noimg ${cls}"><div><b>${esc(w.titleAr)}</b>الصورة غير معروضة لأن حقوقها محفوظة</div></div>`}
+function wcard(w,extra=''){return `<a class="wcard" ${go_('artwork/'+w.id)}>${mat(w)}<h3>${esc(w.titleAr)}</h3><div class="m">${esc(A(w.artist).ar)} · ${esc(w.date)}</div>${extra}</a>`}
+function secH(t,link){return `<div class="sec-h"><h2>${t}</h2>${link||''}</div>`}
+/* ---------- router ---------- */
+let cur='',stack=[];
+const F={q:'',mov:'',art:'',per:'',sort:'date-asc',shown:6,open:false};
+function go(p){stack.push(cur);cur=p;render();window.scrollTo(0,0)}
+function goBack(fb){const p=stack.pop();cur=p===undefined?fb:p;render();window.scrollTo(0,0)}
+function topNav(){const t=cur.split('/')[0];return t===''?'home':({artwork:'artworks',artworks:'artworks',artist:'artists',artists:'artists',movement:'movements',movements:'movements'})[t]||'home'}
+/* ---------- home ---------- */
+const FEAT=['starry-night','great-wave','night-watch'],HPOS={'starry-night':'50% 40%','great-wave':'50% 50%','night-watch':'50% 30%'};let hi=0;
+function heroHTML(){const w=W(FEAT[hi]),a=A(w.artist);return `<div class="hero-bg" style="background-image:url(img/${w.img}.jpg);background-position:${HPOS[w.id]}" role="img" aria-label="${esc(w.titleAr)}، عرض مقتطع من اللوحة"></div><div class="hero-scrim"></div>
+<svg class="hero-thread" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true"><path d="M-20,96 C220,44 440,112 720,72 S1180,22 1460,66" fill="none" stroke="var(--thread)" stroke-width="1.7" stroke-linecap="round" vector-effect="non-scaling-stroke"/></svg>
+<div class="wrap hero-in"><div class="hero-txt"><div class="eyebrow">متحف رقمي للفن</div><h1 style="margin:14px 0 16px">كل لوحة خيط<br>في حكاية الفن</h1>
+<p class="read" style="font-size:20px">اكتشف اللوحات، وتعرّف على الفنانين والمدارس والأفكار التي تصل بينها.</p><p class="hero-poem" lang="ar">« ${w.poem} »</p>
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:24px"><a class="btn pri" ${go_('artworks')}>استكشف اللوحات</a><a class="btn" ${go_('artwork/'+w.id)}>اقرأ حكاية اللوحة</a></div></div>
+<div class="hero-foot"><div class="pager" role="group" aria-label="اللوحات المختارة">${FEAT.map((_,i)=>`<button type="button" data-hero="${i}" aria-pressed="${i===hi}" aria-label="اللوحة ${i+1}">0${i+1}</button>`).join('')}</div>
+<a class="hero-cap" ${go_('artwork/'+w.id)}><b class="ar">${esc(w.titleAr)}</b> · ${esc(a.ar)}، ${esc(w.date)}<span>عرض مقتطع من اللوحة. افتحها كاملة ←</span></a></div></div>`}
+function home(){
+ const cur_=['night-watch','girl-pearl-earring','cafe-terrace','starry-night'].map(W),sp=W('great-wave');
+ const rows=[['starry-night','great-wave'],['starry-night','cafe-terrace'],['girl-pearl-earring','milkmaid'],['mona-lisa','birth-of-venus']];
+ return `<section class="hero" id="hero"><div id="heroIn">${heroHTML()}</div></section>
+<div class="manif sky"><div class="wrap"><p>لا تقف اللوحة وحدها.<br><em>خلفها يدٌ رسمتها، وزمنٌ حملها، وعينٌ نظرت إليها قبلك.</em></p><div class="cap">من بيان وَشيج</div></div></div><div class="wrap">${weave()}</div>
+<section><div class="wrap">${secH('<span>مجموعة: ضوء في العتمة</span>',`<a class="tl" ${go_('artworks')}>كل اللوحات</a>`)}
+<p class="read muted" style="margin:-12px 0 28px">لوحات يخرج فيها الضوء من ظلمة عميقة ويصير هو موضوعها.</p>
+<div class="curated"><a class="wcard big" ${go_('artwork/'+cur_[0].id)}>${mat(cur_[0])}<h3>${cur_[0].titleAr}</h3><div class="m">${A(cur_[0].artist).ar} · ${cur_[0].date}</div><div class="cpoem">${cur_[0].poem}</div></a>
+${cur_.slice(1).map(w=>`<a class="wcard sm" ${go_('artwork/'+w.id)}>${mat(w)}<h3>${w.titleAr}</h3><div class="m">${A(w.artist).ar} · ${w.date}</div><div class="cpoem">${w.poem}</div></a>`).join('')}</div></div></section>
+<section class="spot"><div class="wrap spot-g"><a class="brk" ${go_('artwork/'+sp.id)}>${mat(sp)}</a><div><div class="eyebrow">لوحة تحت المجهر</div><h2 style="margin:8px 0 6px">${sp.titleAr}</h2><div class="en muted" style="font-size:20px">The Great Wave off Kanagawa</div>
+<p class="read" style="margin-top:16px;font-size:19px">${sp.intro}</p>
+<ul class="ctx"><li><b>اليابان</b><span>في عهد توكوغاوا كانت التجارة الخارجية محدودة جدًا، وبقيت قنوات صغيرة مع الهولنديين والصينيين.</span></li><li><b>إيدو</b><span>ازدهرت في المدينة سوق للمطبوعات الملونة يشتريها سكانها.</span></li><li><b>الصبغة</b><span>وصل الأزرق البروسي إلى اليابان عبر التجارة، فصار استخدامه في الطباعة ممكنًا.</span></li><li><b>الأثر</b><span>وصلت المطبوعات اليابانية إلى أوروبا في القرن 19 وأثرت في فنانين مثل فان غوخ ومونيه.</span></li></ul>
+<a class="btn sec" style="margin-top:22px" ${go_('artwork/'+sp.id)}>اقرأ حكاية اللوحة</a></div></div></section>
+<section><div class="wrap">${secH('أعمال تستحق الاكتشاف','<span class="railbtns"><button type="button" data-rail="1" aria-label="التالي">←</button><button type="button" data-rail="-1" aria-label="السابق">→</button></span>')}<div class="rail-sc" id="rsc">${WORKS.filter(w=>w.img).map(w=>wcard(w)).join('')}</div></div></section>
+<section><div class="wrap">${secH('فنانون للاكتشاف',`<a class="tl" ${go_('artists')}>كل الفنانين</a>`)}
+<div class="artists">${['van-gogh','vermeer','monet','leonardo'].map(id=>{const a=A(id);return `<a class="acard" ${go_('artist/'+id)}>${mat(W(a.lead))}<h3>${a.ar}</h3><div class="cap">${a.born} – ${a.died} · ${M(a.movements[0]).ar}</div></a>`}).join('')}</div></div></section>
+<section style="padding-top:0"><div class="wrap">${secH('استكشف المدارس الفنية',`<a class="tl" ${go_('movements')}>كل المدارس</a>`)}
+<div class="mv-list">${['renaissance','dutch','romanticism','impressionism','postimpressionism','ukiyoe'].map(mvRow).join('')}</div></div></section>
+<section class="spot"><div class="wrap">${secH('خيوط بين اللوحات')}<p class="read muted" style="margin:-12px 0 20px">كل خيط يصل لوحة بأخرى، ويذكر السبب.</p>
+<div class="threads">${rows.map(([a,b])=>{const wa=W(a),why=wa.related.find(r=>r[0]===b)[1];return `<div class="trow"><a ${go_('artwork/'+a)} aria-label="${esc(wa.titleAr)}">${mat(wa)}</a><div class="why"><span>${esc(why)}</span></div><a ${go_('artwork/'+b)} aria-label="${esc(W(b).titleAr)}">${mat(W(b))}</a></div>`}).join('')}</div></div></section>
+<section style="padding-top:0"><div class="wrap"><div class="tiles3">${[['movements','استكشف حسب المدرسة الفنية','تسع مدارس، من النهضة إلى السريالية','impression-sunrise'],['artists','تعرّف على الفنانين','سِيَر قصيرة وأعمال من عصور مختلفة','girl-pearl-earring'],['artworks','تتبّع الروابط بين اللوحات','لكل لوحة سبب يصلها بغيرها','starry-night']].map(([g,t,d,i])=>`<a class="tile3" ${go_(g)}>${mat(W(i))}<div><h3>${t}</h3><p class="muted">${d}</p></div></a>`).join('')}</div></div></section>
+`}
+function mvRow(id){const m=M(id);return `<a class="mv-row" ${go_('movement/'+id)}><h3>${m.ar}</h3><span class="muted">${m.period}</span><span class="cap">${plural(worksIn(id).length)}</span></a>`}
+/* ---------- collection ---------- */
+function filtered(){const q=norm(F.q);let r=WORKS.filter(w=>{if(F.mov&&w.movement!==F.mov)return false;if(F.art&&w.artist!==F.art)return false;if(F.per&&perOf(w).id!==F.per)return false;
+ if(q){const hay=norm([w.titleAr,w.orig,A(w.artist).ar,A(w.artist).orig,M(w.movement).ar,M(w.movement).orig].join(' '));return q.split(' ').every(t=>hay.includes(t))}return true});
+ r.sort((a,b)=>F.sort==='title'?a.titleAr.localeCompare(b.titleAr,'ar'):F.sort==='date-desc'?b.year-a.year:a.year-b.year);return r}
+const opt=(items,sel,all)=>`<option value="">${all}</option>`+items.map(([v,t])=>`<option value="${v}" ${v===sel?'selected':''}>${esc(t)}</option>`).join('');
+function chipsHTML(){const c=[];if(F.q)c.push(['q','بحث: '+F.q]);if(F.mov)c.push(['mov',M(F.mov).ar]);if(F.art)c.push(['art',A(F.art).ar]);if(F.per)c.push(['per',PERIODS.find(p=>p.id===F.per).ar]);
+ return c.map(([k,t])=>`<span class="chip">${esc(t)}<button type="button" data-clr="${k}" aria-label="إزالة ${esc(t)}">${ico.x.replace('20','14')}</button></span>`).join('')}
+function resultsHTML(){const r=filtered(),sh=r.slice(0,F.shown);
+ if(!r.length)return `<div class="empty"><div>${sym(56,4)}</div><h3>لا توجد لوحات مطابقة</h3><p class="muted read" style="font-size:18px">جرّب اسمًا آخر، أو وسّع الفترة، أو أزل بعض المرشحات.</p><button class="btn pri" type="button" data-reset>إعادة الضبط</button></div>`;
+ return `<div class="grid">${sh.map(w=>wcard(w)).join('')}</div><div style="text-align:center;margin-top:40px" class="muted">عرض ${sh.length} من ${r.length}${r.length>sh.length?`<div style="margin-top:14px"><button class="btn" type="button" data-more>تحميل المزيد</button></div>`:''}</div>`}
+function collection(){
+ const arts=Object.keys(ARTISTS).map(a=>[a,ARTISTS[a].ar]),mv=Object.keys(MOVEMENTS).map(m=>[m,MOVEMENTS[m].ar]);
+ return `<div class="page-h"><div class="wrap"><div class="eyebrow">المجموعة</div><h1>اللوحات</h1><p class="read muted" style="margin-top:6px">ابحث بعنوان اللوحة أو اسم الفنان، وصفِّ بالمدرسة والفترة.</p></div></div>
+<div class="wrap coll"><aside><button class="btn fbtn" type="button" data-ftoggle style="margin-bottom:12px" aria-expanded="${F.open}">المرشحات</button><form class="flt ${F.open?'':'collapsed'}" id="flt" role="search" onsubmit="return false">
+<div class="fld full"><label for="fq">بحث</label><input id="fq" type="search" value="${esc(F.q)}" placeholder="عنوان اللوحة أو الفنان" autocomplete="off"></div>
+<div class="fld"><label for="fm">المدرسة الفنية</label><select id="fm">${opt(mv,F.mov,'كل المدارس')}</select></div>
+<div class="fld"><label for="fa">الفنان</label><select id="fa">${opt(arts,F.art,'كل الفنانين')}</select></div>
+<div class="fld"><label for="fp">الفترة</label><select id="fp">${opt(PERIODS.map(p=>[p.id,p.ar]),F.per,'كل الفترات')}</select></div>
+<div class="fld"><label for="fs">الترتيب</label><select id="fs"><option value="date-asc" ${F.sort==='date-asc'?'selected':''}>التاريخ: الأقدم أولًا</option><option value="date-desc" ${F.sort==='date-desc'?'selected':''}>التاريخ: الأحدث أولًا</option><option value="title" ${F.sort==='title'?'selected':''}>العنوان</option></select></div>
+<div class="fld full"><button class="btn" type="button" data-reset style="width:100%;justify-content:center">إعادة الضبط</button></div></form></aside>
+<div><div class="chips" id="chips">${chipsHTML()}</div><div class="res-top"><span id="cnt" role="status">${filtered().length} من ${WORKS.length} لوحة</span></div><div id="res">${resultsHTML()}</div></div></div>`}
+function refreshRes(){$('#chips').innerHTML=chipsHTML();$('#cnt').textContent=filtered().length+' من '+WORKS.length+' لوحة';$('#res').innerHTML=resultsHTML();fixImgs()}
+/* ---------- artwork detail ---------- */
+function cropHTML(w,d){const m=IMGS[w.img],r=d.r;return `<div class="crop" role="img" aria-label="${esc(d.t)}: تفصيل من الصورة الأصلية" style="aspect-ratio:${(r.w*m.w).toFixed(0)} / ${(r.h*m.h).toFixed(0)};max-width:${Math.round(380*r.w*m.w/(r.h*m.h))}px;background-image:url(img/${w.img}.jpg);background-size:${(10000/r.w).toFixed(1)}% ${(10000/r.h).toFixed(1)}%;background-position:${r.w>=100?0:(r.x/(100-r.w)*100).toFixed(1)}% ${r.h>=100?0:(r.y/(100-r.h)*100).toFixed(1)}%"></div>`}
+function artwork(id){
+ const w=W(id);if(!w)return notFound();const a=A(w.artist),m=M(w.movement),meta=IMGS[w.img]||{};
+ const dsec=(sid,h,body,th)=>`<div class="dsec" id="${sid}"><h2 ${th?'data-th':''}>${h}</h2><div>${body}</div></div>`;
+ const hasCrop=w.details.some(d=>d.r);
+ const dets=hasCrop?`<div class="dts">${w.details.filter(d=>d.r).map(d=>`<div>${cropHTML(w,d)}<h3>${d.t}</h3><p>${d.d}</p></div>`).join('')}</div><p class="note" style="margin-top:18px">التفاصيل مقتطعة من الصورة الأصلية دون تعديل في الألوان.</p>`:`<ul class="traits" style="max-width:720px">${w.details.map(d=>`<li><span><b>${d.t}:</b> ${d.d}</span></li>`).join('')}</ul>`;
+ const rel=w.related.map(([rid,why])=>`<div><a class="wcard" ${go_('artwork/'+rid)}>${mat(W(rid))}<h3>${W(rid).titleAr}</h3><div class="m">${A(W(rid).artist).ar} · ${W(rid).date}</div></a><div class="why">${esc(why)}</div></div>`).join('');
+ const links=[];if(w.img){links.push(`<a href="https://commons.wikimedia.org/wiki/File:${meta.file}" target="_blank" rel="noopener">الصورة: ويكيميديا كومنز</a> · عمل في الملك العام، ولا تُعرف قيود على الصورة الفوتوغرافية له`);links.push(`<a href="${meta.wiki}" target="_blank" rel="noopener">مقال ويكيبيديا عن اللوحة</a> · مرجع عام لبيانات العمل`)}
+ if(w.src.moma)links.push(`<a href="${w.src.moma}" target="_blank" rel="noopener">صفحة العمل في متحف الفن الحديث</a> · الجهة المقتنية`);
+ (w.src.extra||[]).forEach(([t,u])=>links.push(`<a href="${u}" target="_blank" rel="noopener">${t}</a> · مصدر للرسائل والنصوص`));
+ if(!w.img)links.push('لا تُعرض صورة لهذا العمل في النموذج الأولي لأن حقوقه محفوظة.');
+ return `<div class="wrap"><nav class="crumbs" aria-label="مسار التصفح"><a ${go_('')}>الرئيسية</a>/<a ${go_('artworks')}>اللوحات</a>/<span aria-current="page" style="color:var(--ink)">${w.titleAr}</span></nav></div>
+<div class="detail stars" id="detail"><svg class="rail" id="rail" aria-hidden="true"></svg><div class="wrap">
+<div class="d-hero"><div><div class="eyebrow">${m.ar} · ${m.period}</div><h1 style="margin-top:10px" id="h1" tabindex="-1">${w.titleAr}</h1><div class="en muted" style="font-size:22px;margin-top:4px">${esc(w.orig)}</div>
+<div class="poem" lang="ar"><span>${w.poem}<small>سطر تحريري من وَشيج، وليس من كلام الفنان</small></span></div>
+<a class="achip" ${go_('artist/'+w.artist)}><span class="av">${sym(30,6)}</span><span><b class="ar" style="font-size:20px">${a.ar}</b><span class="cap" style="display:block">${a.born} – ${a.died}</span></span></a>
+<dl class="facts"><div><dt>التاريخ</dt><dd>${w.date}</dd></div><div><dt>الخامة</dt><dd>${w.medium}</dd></div><div><dt>القياس</dt><dd>${w.dims}</dd></div><div><dt>مكان الإنجاز</dt><dd>${w.place}</dd></div><div class="w"><dt>الجهة المقتنية</dt><dd>${w.where}</dd></div></dl>
+<p class="read">${w.intro}</p>
+<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:24px"><a class="btn pri" ${go_('artist/'+w.artist)}>الفنان: ${a.ar}</a><button class="btn" type="button" data-back="artworks">${ico.arr} العودة إلى اللوحات</button></div></div>
+<figure class="plate" id="plate" data-th>${w.img?`<button class="zoom" type="button" data-zoom="${w.img}" aria-label="عرض اللوحة بحجم أكبر">${ico.zoom}</button>`:''}${w.img?`<div class="brk"><div class="mat">${img(w,{eager:true})}</div></div>`:mat(w)}<figcaption class="cap" style="margin-top:10px">اللوحة كاملة بنسبتها وألوانها الأصلية، دون اقتصاص أو فلتر.</figcaption></figure></div></div>
+<nav class="subnav" aria-label="أقسام الصفحة"><div class="wrap">${[['s-story','حكاية اللوحة'],['s-read','قراءة فنية'],['s-det','تفاصيل تستحق الانتباه'],['s-int','التفسيرات'],['s-src','المصادر'],['s-rel','لوحات متصلة']].map(([i,t])=>`<a href="#" data-scroll="${i}">${t}</a>`).join('')}</div></nav>
+<div class="wrap">${dsec('s-story','حكاية اللوحة',`<div class="read">${w.story.map(p=>`<p>${p}</p>`).join('')}</div>`,1)}
+${dsec('s-read','قراءة فنية',`<div class="read">${w.reading.map(p=>`<p>${p}</p>`).join('')}</div>`,1)}
+${dsec('s-det','تفاصيل تستحق الانتباه',dets,1)}
+${dsec('s-int','تفسيرات منسوبة',`<p class="note" style="margin:0 0 16px;max-width:760px">الوقائع في الأقسام السابقة مأخوذة من مراجع المتاحف والدراسات. أما ما يلي فاجتهادات لباحثين وقراء، وتختلف بينهم.</p><div class="interp">${w.interp.map(i=>`<div class="intp"><p>${i.t}</p><div class="a">${i.a}</div></div>`).join('')}</div>`,1)}
+${dsec('s-src','المصادر والاعتمادات',`<ul class="srcs">${links.map(l=>`<li>${l}</li>`).join('')}</ul>`,1)}
+<div class="dsec" id="s-rel" style="border:0"><h2 data-th>لوحات متصلة</h2><div><div class="rel" data-th-end>${rel}</div></div></div></div></div>`}
+function notFound(){return `<div class="wrap" style="padding-block:80px"><div class="empty"><h3>لم نجد هذه الصفحة</h3><a class="btn pri" ${go_('')}>العودة إلى الرئيسية</a></div></div>`}
+/* ---------- artists & movements ---------- */
+function artists(){return `<div class="page-h"><div class="wrap"><div class="eyebrow">الفنانون</div><h1>الفنانون</h1><p class="read muted" style="margin-top:6px">اثنا عشر فنانًا من عصور وبلدان مختلفة.</p></div></div><section><div class="wrap"><div class="artists" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr))">${Object.keys(ARTISTS).map(id=>{const a=A(id),l=a.lead?W(a.lead):worksBy(id)[0];return `<a class="acard" ${go_('artist/'+id)}>${mat(l)}<h3>${a.ar}</h3><div class="cap">${a.born} – ${a.died} · ${a.movements.map(m=>M(m).ar).join('، ')}</div></a>`}).join('')}</div></div></section>`}
+function artist(id){const a=A(id);if(!a)return notFound();const ws=worksBy(id),l=ws.find(w=>w.id===a.lead)||ws[0];
+ const same=[...new Set(a.movements.flatMap(artistsIn))].filter(x=>x!==id);
+ return `<div class="wrap"><nav class="crumbs"><a ${go_('')}>الرئيسية</a>/<a ${go_('artists')}>الفنانون</a>/<span style="color:var(--ink)">${a.ar}</span></nav>
+<div class="p-hero"><div><div class="eyebrow">${a.born} – ${a.died} · ${a.place}</div><h1 id="h1" tabindex="-1" style="margin-top:10px">${a.ar}</h1><div class="en muted" style="font-size:24px">${esc(a.orig)}</div>
+<div class="meta-row">${a.movements.map(m=>`<a class="tag" ${go_('movement/'+m)}>${M(m).ar}</a>`).join('')}</div></div><a ${go_('artwork/'+l.id)}>${mat(l)}</a></div>
+<div class="dsec"><h2>السيرة</h2><div class="read"><p>${a.bio}</p></div></div>
+<div class="dsec"><h2>الأسلوب والسياق</h2><div class="read"><p>${a.style}</p><p class="muted" style="font-size:17px">${a.movements.map(m=>`${M(m).ar}: ${M(m).period}، ${M(m).where}.`).join(' ')}</p></div></div>
+<div class="dsec" style="border:0"><h2>أعمال في المجموعة</h2><div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr))">${ws.map(w=>wcard(w)).join('')}</div></div>
+${same.length?`<div class="dsec" style="border:0"><h2>فنانون من المدرسة نفسها</h2><div class="alist">${same.map(x=>`<a ${go_('artist/'+x)}><b class="ar" style="font-size:20px">${A(x).ar}</b><span class="cap">${A(x).born} – ${A(x).died}</span></a>`).join('')}</div></div>`:''}</div>`}
+function movements(){return `<div class="page-h"><div class="wrap"><div class="eyebrow">المدارس الفنية</div><h1>المدارس الفنية</h1><p class="read muted" style="margin-top:6px">تسع مدارس تجمع اللوحات في سياقاتها.</p></div></div><section><div class="wrap"><div class="mv-list">${Object.keys(MOVEMENTS).map(mvRow).join('')}</div></div></section>`}
+function movement(id){const m=M(id);if(!m)return notFound();const ws=worksIn(id),as=artistsIn(id);
+ return `<div class="wrap"><nav class="crumbs"><a ${go_('')}>الرئيسية</a>/<a ${go_('movements')}>المدارس الفنية</a>/<span style="color:var(--ink)">${m.ar}</span></nav>
+<div style="padding-block:clamp(24px,4vw,48px) 8px"><div class="eyebrow">${m.period} · ${m.where}</div><h1 id="h1" tabindex="-1" style="margin-top:10px">${m.ar}</h1><div class="en muted" style="font-size:24px">${m.orig}</div><div class="mline" lang="ar">${m.line}</div></div>
+<div class="dsec"><h2>مقدمة تاريخية</h2><div class="read"><p>${m.intro}</p></div></div>
+<div class="dsec"><h2>ما يميّزها</h2><ul class="traits">${m.traits.map(t=>`<li>${t}</li>`).join('')}</ul></div>
+<div class="dsec"><h2>فنانون مرتبطون</h2><div class="alist">${as.map(x=>`<a ${go_('artist/'+x)}><b class="ar" style="font-size:20px">${A(x).ar}</b><span class="cap">${A(x).born} – ${A(x).died}</span></a>`).join('')}</div></div>
+<div class="dsec" style="border:0"><h2>لوحات من هذه المدرسة</h2><div class="grid" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr))">${ws.map(w=>wcard(w)).join('')}</div></div></div>`}
+/* ---------- shell ---------- */
+function footer(){return `<footer class="ftr"><div class="wrap ftr-g"><div><div class="logo" style="margin-bottom:12px">${sym(34,5)}${wordmark}</div><p class="muted" style="max-width:36ch">كل لوحة خيط في حكاية الفن.</p></div>
+<div><b>تنقّل</b><ul style="margin-top:8px"><li><a ${go_('')}>الرئيسية</a></li><li><a ${go_('artworks')}>اللوحات</a></li><li><a ${go_('artists')}>الفنانون</a></li><li><a ${go_('movements')}>المدارس الفنية</a></li></ul></div>
+<div><b>المصادر والاعتمادات</b><p class="cap" style="margin-top:8px">صور اللوحات من ويكيميديا كومنز، وهي أعمال في الملك العام وتُعرض بألوانها الأصلية. البيانات من مراجع المتاحف والمقالات المنشورة، وتُذكر في صفحة كل لوحة. هذا نموذج أولي، والمحتوى مختصر وقيد المراجعة التحريرية.</p></div></div></footer>`}
+function render(){
+ const [t,p]=cur.split('/'),v=$('#view');
+ v.innerHTML=({'':home,artworks:collection,artwork:()=>artwork(p),artists,artist:()=>artist(p),movements,movement:()=>movement(p)}[t]||notFound)();
+ $('#view').insertAdjacentHTML('beforeend',footer());
+ const tp=topNav();$$('[data-nav]').forEach(a=>{a.toggleAttribute('aria-current',a.dataset.nav===tp);if(a.dataset.nav===tp)a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+ closeAll();fixImgs();v.style.animation='none';void v.offsetWidth;v.style.animation='';
+ if(t==='artwork')setupDetail();else $('#rail')?.remove();
+ const h=$('#h1');if(h)h.focus({preventScroll:true});
+}
+function fixImgs(){$$('img:not(.ld)').forEach(i=>{if(i.complete)i.classList.add('ld')});setTimeout(()=>$$('img:not(.ld)').forEach(i=>i.classList.add('ld')),3000)}
+/* detail: Long Thread in the margin + subnav */
+function drawRail(){const d=$('#detail'),r=$('#rail');if(!d||!r||getComputedStyle(r).display==='none')return;
+ const dr=d.getBoundingClientRect(),pts=$$('[data-th]',d).map(e=>{const b=e.getBoundingClientRect();return e.id==='plate'?b.bottom-dr.top-16:b.top-dr.top+22});
+ const last=$('[data-th-end]',d);if(last){pts.push(last.getBoundingClientRect().top-dr.top+60)}
+ if(pts.length<2)return;const x=24,H=d.offsetHeight;r.setAttribute('viewBox',`0 0 48 ${H}`);r.setAttribute('height',H);
+ let p=`M${x},${pts[0]}`;for(let i=1;i<pts.length;i++){const y0=pts[i-1],y1=pts[i],ym=(y0+y1)/2,s=i%2?10:-10;p+=` C${x+s},${y0+(ym-y0)*.5} ${x+s},${ym+(y1-ym)*.5} ${x},${y1}`}
+ r.innerHTML=`<path d="${p}"/>${pts.map(y=>`<circle cx="${x}" cy="${y}" r="4"/>`).join('')}`}
+let rafL=0;function onScroll(){if(rafL)return;rafL=requestAnimationFrame(()=>{rafL=0;const subs=$$('.subnav a');if(!subs.length)return;let on=null;subs.forEach(a=>{const s=$('#'+a.dataset.scroll);if(s&&s.getBoundingClientRect().top<180)on=a});subs.forEach(a=>a.classList.toggle('on',a===on))})}
+function setupDetail(){drawRail();[200,800,1800].forEach(t=>setTimeout(drawRail,t));onScroll()}
+/* overlays */
+function closeAll(){$('#drawer').classList.remove('open');$('#sov').classList.remove('open');$('#lb').classList.remove('open');document.body.style.overflow=''}
+function openSearch(){$('#sov').classList.add('open');document.body.style.overflow='hidden';const i=$('#sq');i.value='';sres('');setTimeout(()=>i.focus(),30)}
+function sres(q){const n=norm(q);const r=n?WORKS.filter(w=>n.split(' ').every(t=>norm([w.titleAr,w.orig,A(w.artist).ar,A(w.artist).orig,M(w.movement).ar].join(' ')).includes(t))).slice(0,8):[];
+ $('#sr').innerHTML=!n?`<p class="muted">اكتب عنوان لوحة أو اسم فنان.</p>`:r.length?r.map(w=>`<a ${go_('artwork/'+w.id)}>${w.img?`<img src="img/${w.img}.jpg" alt="" width="44" height="44">`:'<span style="width:44px;height:44px;background:var(--surface)"></span>'}<span><b class="ar" style="font-size:19px">${w.titleAr}</b><br><span class="cap">${A(w.artist).ar} · ${w.date}</span></span></a>`).join('')+`<a ${go_('artworks')} data-q="${esc(q)}" class="tl" style="border:0">عرض كل النتائج في المجموعة</a>`:`<p class="muted">لا نتائج لهذا البحث.</p>`}
+/* events */
+document.addEventListener('click',e=>{const t=e.target.closest('[data-go],[data-back],[data-hero],[data-rail],[data-clr],[data-reset],[data-more],[data-ftoggle],[data-zoom],[data-scroll],#openS,#openM,#closeM,#closeS,#lb');if(!t)return;
+ if(t.dataset.go!==undefined){e.preventDefault();if(t.dataset.q!==undefined){F.q=t.dataset.q}go(t.dataset.go)}
+ else if(t.dataset.back){goBack(t.dataset.back)}
+ else if(t.dataset.rail){const el=$('#rsc');el.scrollBy({left:-(+t.dataset.rail)*el.clientWidth*.8,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'})}
+ else if(t.dataset.hero){hi=+t.dataset.hero;$('#heroIn').innerHTML=heroHTML()}
+ else if(t.dataset.clr){const k=t.dataset.clr;F[k==='q'?'q':k]='';if(k==='q')$('#fq').value='';['fm','fa','fp'].forEach((i,n)=>{});F.shown=6;syncFilters();refreshRes()}
+ else if(t.dataset.reset!==undefined){Object.assign(F,{q:'',mov:'',art:'',per:'',sort:'date-asc',shown:6});syncFilters();refreshRes()}
+ else if(t.dataset.more!==undefined){F.shown+=6;refreshRes()}
+ else if(t.dataset.ftoggle!==undefined){F.open=!F.open;$('#flt').classList.toggle('collapsed',!F.open);t.setAttribute('aria-expanded',F.open)}
+ else if(t.dataset.zoom){$('#lbi').src='img/'+t.dataset.zoom+'.jpg';$('#lb').classList.add('open');document.body.style.overflow='hidden'}
+ else if(t.dataset.scroll){e.preventDefault();$('#'+t.dataset.scroll).scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'start'})}
+ else if(t.id==='openS')openSearch();else if(t.id==='closeS'){closeAll()}
+ else if(t.id==='openM'){$('#drawer').classList.add('open');document.body.style.overflow='hidden'}else if(t.id==='closeM')closeAll();
+ else if(t.id==='lb')closeAll();
+});
+function syncFilters(){const f=$('#fq');if(!f)return;f.value=F.q;$('#fm').value=F.mov;$('#fa').value=F.art;$('#fp').value=F.per;$('#fs').value=F.sort}
+document.addEventListener('input',e=>{if(e.target.id==='fq'){F.q=e.target.value;F.shown=6;refreshRes()}if(e.target.id==='sq')sres(e.target.value)});
+document.addEventListener('change',e=>{const m={fm:'mov',fa:'art',fp:'per',fs:'sort'}[e.target.id];if(m){F[m]=e.target.value;F.shown=6;refreshRes()}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeAll();if(e.key==='Enter'&&e.target.id==='sq'){F.q=e.target.value;go('artworks')}});
+addEventListener('resize',()=>{drawRail()});addEventListener('scroll',onScroll,{passive:true});
+$('#logoA').innerHTML=sym(36,5)+wordmark;$('#openS').insertAdjacentHTML('afterbegin',ico.search);$('#openM').innerHTML=ico.menu;$('#closeM').innerHTML=ico.x;$('#closeS').innerHTML=ico.x;$('#lbx').innerHTML=ico.x;
+render();applySky();
+</script>

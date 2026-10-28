@@ -1,0 +1,1 @@
+Three devices, all derived from the symbol. The Long Thread: a single 1.2–1.6px yellow line crosses frames and alternates over and under at each edge. The Separator: a hairline rule interrupted by one thread stroke. The Frame device: four ink corner marks around a crop. The symbol pattern is `hairline` on `surface` only. No Islamic geometric patterns, textures or flourishes.

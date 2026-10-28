@@ -1,0 +1,26 @@
+[
+  {
+    "id": "p1",
+    "ar": "قبل 1600",
+    "minYear": -10000,
+    "maxYearExclusive": 1600
+  },
+  {
+    "id": "p2",
+    "ar": "القرن 17",
+    "minYear": 1600,
+    "maxYearExclusive": 1700
+  },
+  {
+    "id": "p3",
+    "ar": "القرنان 18 و19",
+    "minYear": 1700,
+    "maxYearExclusive": 1900
+  },
+  {
+    "id": "p4",
+    "ar": "القرن 20",
+    "minYear": 1900,
+    "maxYearExclusive": null
+  }
+]

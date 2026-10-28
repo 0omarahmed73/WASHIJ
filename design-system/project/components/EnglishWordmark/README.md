@@ -1,0 +1,1 @@
+English wordmark: Cormorant Garamond Medium, uppercase, 0.32em tracking, with the right margin pulled back by the same amount so the word centres optically. Never set in bold or italic; never yellow.

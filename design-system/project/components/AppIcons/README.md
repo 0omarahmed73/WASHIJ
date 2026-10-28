@@ -1,0 +1,1 @@
+Icon geometry thickens at small sizes (stroke 5–7 on the 120 grid). The social post template: half artwork at original colour, half text on bg; the symbol alone signs the post.

@@ -1,0 +1,1 @@
+The Arabic wordmark is live type: Amiri Bold, no letter-spacing (Arabic connections are never tracked), line-height 1.35. Full vocalisation shows the fatha on waw, set in the accent. Final outlines for print and signage must be cut from the licensed font by a type designer; the web wordmark ships as text.

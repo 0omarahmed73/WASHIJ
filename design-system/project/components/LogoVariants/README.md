@@ -1,0 +1,1 @@
+Nine members: Arabic wordmark, English wordmark, lockup, symbol, two monochrome versions, dark and light signatures, and the icon set. Pick by the context in the card, not by taste.

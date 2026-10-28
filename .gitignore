@@ -1,0 +1,21 @@
+# Flutter and Dart generated output
+**/build/
+**/.dart_tool/
+**/.flutter-plugins-dependencies
+**/local.properties
+**/.idea/
+**/*.iml
+
+# Local credentials and application state
+/.aws/
+/.codex/
+/.code-review-graph/
+/.playwright-mcp/
+/graphify-out/
+
+# Generated research data and unrelated personal planner
+/tools/out/
+/plan90/
+
+# Local continuation notes contain machine-specific paths
+/FLUTTER_HANDOFF.md

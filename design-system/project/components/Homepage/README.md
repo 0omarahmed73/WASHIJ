@@ -1,0 +1,1 @@
+Gallery theme, 1280 wide. The hero shows the painting whole and unfiltered; the Long Thread runs behind the page and crosses sections once. Artworks are placeholders sized to the true proportions. Collection counts are illustrative.

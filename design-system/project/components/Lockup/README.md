@@ -1,0 +1,1 @@
+The horizontal lockup is the default. The Arabic wordmark leads and is 2.4 times the English cap height; the symbol is 1.1 times the Arabic line. Use the stacked lockup in square or narrow formats only.

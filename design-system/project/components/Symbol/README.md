@@ -1,0 +1,1 @@
+The symbol is geometry, not an illustration. Frame 54 × 90 on a 120 grid (3:5), thread at 35° crossing over the left edge and under the right edge. Stroke 3.2 on the 120 grid; 5 at 32px and below; 6 at 16px. The frame takes `ink`; the thread takes `thread` and is the only gold element.

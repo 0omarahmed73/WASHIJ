@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WASHIJ bundled works.json (array of artworks)",
+  "type": "array",
+  "minItems": 14,
+  "maxItems": 14,
+  "items": {
+    "type": "object",
+    "required": ["id", "qid", "titleAr", "titleOrig", "artistId", "movementId", "year", "poem", "story", "reading", "interpretations", "related", "credit"],
+    "properties": {
+      "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+      "qid": { "type": "string", "pattern": "^Q[0-9]+$" },
+      "titleAr": { "type": "string", "minLength": 1 },
+      "titleOrig": { "type": "string", "minLength": 1 },
+      "artistId": { "type": "string" },
+      "movementId": { "type": "string" },
+      "year": { "type": "integer" },
+      "dateText": { "type": "string" },
+      "medium": { "type": "string" },
+      "dims": { "type": "string" },
+      "collection": { "type": "string" },
+      "place": { "type": "string" },
+      "poem": { "type": "string", "minLength": 1 },
+      "intro": { "type": "string" },
+      "story": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+      "reading": { "type": "array", "items": { "type": "string" } },
+      "details": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["title", "text"],
+          "properties": {
+            "title": { "type": "string" },
+            "text": { "type": "string" },
+            "crop": {
+              "type": "object",
+              "required": ["x", "y", "w", "h"],
+              "properties": { "x": { "type": "number" }, "y": { "type": "number" }, "w": { "type": "number" }, "h": { "type": "number" } }
+            }
+          }
+        }
+      },
+      "interpretations": {
+        "type": "array",
+        "items": { "type": "object", "required": ["text", "attribution"], "properties": { "text": { "type": "string", "minLength": 1 }, "attribution": { "type": "string", "minLength": 1 } } }
+      },
+      "related": {
+        "type": "array",
+        "items": { "type": "object", "required": ["artworkId", "reason"], "properties": { "artworkId": { "type": "string" }, "reason": { "type": "string", "minLength": 1 } } }
+      },
+      "image": {
+        "type": ["object", "null"],
+        "required": ["asset", "width", "height"],
+        "properties": { "asset": { "type": "string" }, "width": { "type": "integer" }, "height": { "type": "integer" } }
+      },
+      "credit": {
+        "type": "object",
+        "required": ["author", "licence", "fileUrl", "articleUrl"],
+        "properties": { "author": { "type": "string" }, "licence": { "type": "string" }, "fileUrl": { "type": "string" }, "articleUrl": { "type": "string" } }
+      }
+    }
+  }
+}

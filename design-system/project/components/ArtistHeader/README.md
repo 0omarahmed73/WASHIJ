@@ -1,0 +1,1 @@
+Name is the heading; dates and place carry the accent colour; tags use border-control. Portrait is a placeholder.

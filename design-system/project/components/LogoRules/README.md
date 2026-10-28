@@ -1,0 +1,1 @@
+Clear space x is half the symbol width. Minimums: symbol 16px, Arabic wordmark 72px, English wordmark 80px, horizontal lockup 160px. On photography, place the signature on a flat area or a `bg` scrim at 70%; never over detail.

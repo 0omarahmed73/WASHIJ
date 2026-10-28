@@ -1,0 +1,937 @@
+[
+  {
+    "id": "starry-night",
+    "qid": "Q45585",
+    "titleAr": "الليلة المرصعة بالنجوم",
+    "titleOrig": "The Starry Night",
+    "artistId": "van-gogh",
+    "movementId": "postimpressionism",
+    "year": 1889,
+    "dateText": "يونيو 1889",
+    "medium": "زيت على قماش",
+    "dimensions": "73.7 × 92.1 سم",
+    "collection": "متحف الفن الحديث (MoMA)، نيويورك",
+    "place": "سان ريمي دو بروفانس، فرنسا",
+    "poem": "سماءٌ لا تهدأ، وقريةٌ تنام تحتها كأن شيئًا لم يكن.",
+    "intro": "رسم فان غوخ هذه اللوحة في يونيو 1889، بعد أسابيع من دخوله مصحة سان بول دو موزول قرب سان ريمي دو بروفانس في جنوب فرنسا. وهي اليوم من أشهر لوحات العالم.",
+    "story": [
+      "دخل فان غوخ المصحة طوعًا في مايو 1889 بعد أزمة نفسية حادة في آرل. أُتيح له أن يرسم هناك، فصارت النافذة والحقول القريبة موضوعه.",
+      "كتب إلى أخيه ثيو عن منظر رآه من نافذته قبل شروق الشمس بوقت طويل، لم يكن فيه سوى نجمة الصباح وقد بدت كبيرة جدًا. غير أن اللوحة نفسها لم تُرسم أمام المنظر على الأرجح، بل من الذاكرة، وتذكر مراجع المتحف أن القرية في أسفلها من خياله.",
+      "اقتنى متحف الفن الحديث في نيويورك العمل عام 1941 ضمن وصية ليلي ب. بليس."
+    ],
+    "reading": [
+      "تنقسم اللوحة إلى سماء متحركة تشغل الجزء الأكبر، وتلال زرقاء، وقرية هادئة في الأسفل. ويوحّد فان غوخ هذه الأجزاء بضربات فرشاة قصيرة سميكة تتبع اتجاه الحركة، فتبدو السماء كأنها تجري.",
+      "تقابل الزرقة العميقة بقعٌ صفراء وبرتقالية للنجوم والقمر، فيلتقي لونان متكاملان في أشد درجاتهما. أما السرو في اليسار فيصعد فوق خط الأفق ويصل الأرض بالسماء."
+    ],
+    "details": [
+      {
+        "title": "شجرة السرو",
+        "text": "تلتف داكنة كأنها لهب. يرتبط السرو في تقاليد البحر المتوسط بالمقابر، ويعدّه بعض الدارسين رابطًا بين الأرض والسماء.",
+        "crop": {
+          "x": 0,
+          "y": 14,
+          "w": 30,
+          "h": 86
+        }
+      },
+      {
+        "title": "القرية وبرج الكنيسة",
+        "text": "بيوت صغيرة يتوسطها برج مرتفع. يلاحظ بعض الدارسين أنه أقرب إلى أبراج الكنائس الهولندية منه إلى أبراج بروفانس.",
+        "crop": {
+          "x": 28,
+          "y": 62,
+          "w": 52,
+          "h": 34
+        }
+      },
+      {
+        "title": "القمر والنجوم",
+        "text": "يحيط بكل نجمة وبالهلال هالات من ضربات متحدة المركز. ويُحصي الباحثون في اللوحة أحد عشر نجمًا.",
+        "crop": {
+          "x": 60,
+          "y": 2,
+          "w": 38,
+          "h": 36
+        }
+      }
+    ],
+    "interpretations": [
+      {
+        "text": "يرى بعض مؤرخي الفن أن حيوية السماء تعكس حالة فان غوخ الانفعالية في تلك الفترة.",
+        "attribution": "قراءة سيرية شائعة، ويتحفظ عليها آخرون"
+      },
+      {
+        "text": "ويميل آخرون إلى قراءة شكلية: تجربة في اللون والإيقاع تتجاوز ما رآه الفنان فعلًا.",
+        "attribution": "قراءة شكلية"
+      },
+      {
+        "text": "وقارنت بعض الدراسات العلمية الحديثة بنية الدوامات في السماء بأنماط الاضطراب في الموائع. وهي مقاربة علمية لا تدّعي تفسير قصد الفنان.",
+        "attribution": "مقاربة علمية، وليست حكمًا فنيًا"
+      }
+    ],
+    "related": [
+      {
+        "artworkId": "cafe-terrace",
+        "reason": "لوحة ليلية من آرل في العام السابق، وهي أول لوحاته التي تظهر فيها نجوم"
+      },
+      {
+        "artworkId": "great-wave",
+        "reason": "أحب فان غوخ المطبوعات اليابانية وجمع منها الكثير"
+      },
+      {
+        "artworkId": "the-scream",
+        "reason": "يقارن النقاد كثيرًا بين السماء المتموجة هنا وسماء مونش"
+      }
+    ],
+    "sources": [
+      {
+        "title": "رسائل فان غوخ",
+        "url": "https://vangoghletters.org"
+      }
+    ],
+    "image": {
+      "asset": "assets/img/starry-night.jpg",
+      "width": 1920,
+      "height": 1520
+    },
+    "commonsFile": "Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
+    "wikipediaTitle": "ليلة النجوم (لوحة)",
+    "credit": {
+      "author": "Vincent van Gogh",
+      "licence": "Public domain",
+      "fileUrl": "https://commons.wikimedia.org/wiki/File:Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
+      "articleUrl": "https://ar.wikipedia.org/wiki/%D9%84%D9%8A%D9%84%D8%A9_%D8%A7%D9%84%D9%86%D8%AC%D9%88%D9%85_(%D9%84%D9%88%D8%AD%D8%A9)",
+      "attribution": "Image by Vincent van Gogh, public domain via Wikimedia Commons. Wikipedia article under CC BY-SA.",
+      "isFallback": true
+    }
+  },
+  {
+    "id": "girl-pearl-earring",
+    "qid": "Q185372",
+    "titleAr": "فتاة بقرط اللؤلؤ",
+    "titleOrig": "Meisje met de parel · Girl with a Pearl Earring",
+    "artistId": "vermeer",
+    "movementId": "dutch",
+    "year": 1665,
+    "dateText": "نحو 1665",
+    "medium": "زيت على قماش",
+    "dimensions": "44.5 × 39 سم",
+    "collection": "متحف مورتسهاوس، لاهاي",
+    "place": "دلفت، هولندا",
+    "poem": "التفاتةٌ واحدة، وسؤالٌ لا يبرح الوجه.",
+    "intro": "لوحة صغيرة رسمها يوهانس فيرمير نحو عام 1665، يلتفت فيها وجه فتاة نحو المشاهد، وعليها عمامة زرقاء وقرط لؤلؤ.",
+    "story": [
+      "تنتمي اللوحة إلى نوع يسميه الهولنديون «ترونيه»، أي دراسة لوجه أو ملامح لا بورتريه لشخص معروف. ولا يُعرف من كانت النموذج.",
+      "وصلت اللوحة إلى متحف مورتسهاوس في لاهاي عام 1902."
+    ],
+    "reading": [
+      "خلفية داكنة مسطحة تبرز الوجه، والضوء يأتي من اليسار فيرسم الخد والشفتين وبريق العين واللؤلؤة. وللعمامة الزرقاء أثر بصري كبير، وقد استُخدم فيها الأزرق المستخرج من حجر اللازورد، وكان من أغلى الأصباغ في ذلك الوقت."
+    ],
+    "details": [
+      {
+        "title": "القرط",
+        "text": "بضع لمسات بيضاء تكفي لتوحي بلؤلؤة تعكس الضوء، دون أن يظهر أي خطاف يعلّقها."
+      },
+      {
+        "title": "الشفتان والنظرة",
+        "text": "نقطة ضوء صغيرة على الشفة السفلى وأخرى في العين تمنحان الوجه حياة، وتبقيان تعبيره غير محدد."
+      }
+    ],
+    "interpretations": [
+      {
+        "text": "اقترح الفيزيائي فنسنت إيكه عام 2014 أن القرط قد لا يكون لؤلؤة حقيقية بل قصديرًا مصقولًا، لأن حجمه أكبر من أي لؤلؤة معروفة آنذاك. ولا يزال الرأي موضع نقاش.",
+        "attribution": "رأي فنسنت إيكه، 2014"
+      }
+    ],
+    "related": [
+      {
+        "artworkId": "milkmaid",
+        "reason": "العمل لنفس الفنان: ضوء النافذة نفسه في مشهد داخلي"
+      },
+      {
+        "artworkId": "night-watch",
+        "reason": "من العصر الذهبي الهولندي نفسه، لكن بالعتمة والحركة والحجم الكبير"
+      },
+      {
+        "artworkId": "mona-lisa",
+        "reason": "وجه يلتفت إلى المشاهد: بورتريه عند ليوناردو، وترونيه عند فيرمير"
+      }
+    ],
+    "sources": [],
+    "image": {
+      "asset": "assets/img/girl-pearl-earring.jpg",
+      "width": 960,
+      "height": 1137
+    },
+    "commonsFile": "1665_Girl_with_a_Pearl_Earring.jpg",
+    "wikipediaTitle": "الفتاة ذات القرط اللؤلؤي (لوحة)",
+    "credit": {
+      "author": "Johannes Vermeer",
+      "licence": "Public domain",
+      "fileUrl": "https://commons.wikimedia.org/wiki/File:1665_Girl_with_a_Pearl_Earring.jpg",
+      "articleUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%81%D8%AA%D8%A7%D8%A9_%D8%B0%D8%A7%D8%AA_%D8%A7%D9%84%D9%82%D8%B1%D8%B7_%D8%A7%D9%84%D9%84%D8%A4%D9%84%D8%A4%D9%8A_(%D9%84%D9%88%D8%AD%D8%A9)",
+      "attribution": "Image by Johannes Vermeer, public domain via Wikimedia Commons. Wikipedia article under CC BY-SA.",
+      "isFallback": true
+    }
+  },
+  {
+    "id": "great-wave",
+    "qid": "Q252485",
+    "titleAr": "الموجة الكبرى قبالة كاناغاوا",
+    "titleOrig": "神奈川沖浪裏 · The Great Wave off Kanagawa",
+    "artistId": "hokusai",
+    "movementId": "ukiyoe",
+    "year": 1831,
+    "dateText": "نحو 1831",
+    "medium": "طباعة بقوالب خشبية، حبر وألوان على ورق",
+    "dimensions": "نحو 25 × 38 سم، تتفاوت قليلًا بين النسخ",
+    "collection": "نسخ في متاحف عدة منها المتروبوليتان في نيويورك",
+    "place": "إيدو، اليابان",
+    "poem": "موجةٌ تمدّ أصابعها، وجبلٌ صغير يحفظ الصمت.",
+    "intro": "طبعة خشبية أنجزها هوكوساي نحو عام 1831، وهي من سلسلة «ستة وثلاثين منظرًا لجبل فوجي».",
+    "story": [
+      "تُعرف خطأً باسم التسونامي، والأدق أنها موجة بحرية عاتية. تظهر فيها ثلاثة قوارب صيد، وجبل فوجي صغيرًا في البعيد.",
+      "وهي طبعة، فلها نسخ كثيرة في متاحف مختلفة وليس لها أصل وحيد. واستُخدم فيها صبغ الأزرق البروسي المستورد، وكان جديدًا في اليابان آنذاك."
+    ],
+    "reading": [
+      "يقوم التكوين على منحنى الموجة الذي يطوّق جبل فوجي الصغير، فيبدو الجبل ثابتًا في قلب الحركة. وتتحول الرغوة إلى أصابع، وتتوازن الخطوط الداكنة مع مساحات لونية مسطحة."
+    ],
+    "details": [
+      {
+        "title": "جبل فوجي",
+        "text": "قمته البيضاء تتوسط الفراغ تحت قوس الموجة، فتبدو الموجة أعلى منه."
+      },
+      {
+        "title": "القوارب",
+        "text": "ثلاثة قوارب يحني فيها الصيادون أجسادهم ويبدون صغارًا جدًا أمام الموجة."
+      }
+    ],
+    "interpretations": [
+      {
+        "text": "يقرأ كثير من الدارسين المشهد بوصفه مواجهة بين قوة الطبيعة وهشاشة الإنسان. وهي قراءة حديثة النزعة، وقد لا تطابق قصد الفنان.",
+        "attribution": "قراءة شائعة، وليست من كلام هوكوساي"
+      }
+    ],
+    "related": [
+      {
+        "artworkId": "starry-night",
+        "reason": "أُعجب فان غوخ بالمطبوعات اليابانية وجمع منها الكثير"
+      },
+      {
+        "artworkId": "impression-sunrise",
+        "reason": "اهتم مونيه بالفن الياباني واقتنى منه مجموعة"
+      }
+    ],
+    "sources": [],
+    "image": {
+      "asset": "assets/img/great-wave.jpg",
+      "width": 1280,
+      "height": 860
+    },
+    "commonsFile": "Tsunami_by_hokusai_19th_century.jpg",
+    "wikipediaTitle": "الموجة الكبيرة في كاناغاوا",
+    "credit": {
+      "author": "Katsushika Hokusai",
+      "licence": "Public domain",
+      "fileUrl": "https://commons.wikimedia.org/wiki/File:Tsunami_by_hokusai_19th_century.jpg",
+      "articleUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%84%D9%85%D9%88%D8%AC%D8%A9_%D8%A7%D9%84%D9%83%D8%A8%D9%8A%D8%B1%D8%A9_%D9%81%D9%8A_%D9%83%D8%A7%D9%86%D8%A7%D8%BA%D8%A7%D9%88%D8%A7",
+      "attribution": "Image by Katsushika Hokusai, public domain via Wikimedia Commons. Wikipedia article under CC BY-SA.",
+      "isFallback": true
+    }
+  },
+  {
+    "id": "mona-lisa",
+    "qid": "Q12418",
+    "titleAr": "الموناليزا",
+    "titleOrig": "La Gioconda · Mona Lisa",
+    "artistId": "leonardo",
+    "movementId": "renaissance",
+    "year": 1503,
+    "dateText": "نحو 1503 – 1519",
+    "medium": "زيت على لوح من خشب الحور",
+    "dimensions": "77 × 53 سم",
+    "collection": "متحف اللوفر، باريس",
+    "place": "فلورنسا، إيطاليا (بدأ العمل)",
+    "poem": "ابتسامةٌ تتأخر قليلًا عن الجواب.",
+    "intro": "بورتريه رسمه ليوناردو دا فينشي بدءًا من نحو عام 1503 وعاد إليه سنوات، ويحفظه متحف اللوفر في باريس.",
+    "story": [
+      "يُعتقد على نطاق واسع أن النموذج هي ليزا غيرارديني، زوجة التاجر الفلورنسي فرانشيسكو ديل جيوكوندو. ومن هنا اسمها الإيطالي «لا جيوكوندا».",
+      "ويُرجّح أن ليوناردو احتفظ بها معه حتى وفاته في فرنسا. وسُرقت من اللوفر عام 1911 واستُردت عام 1913."
+    ],
+    "reading": [
+      "اعتمد ليوناردو أسلوب «السفوماتو»: طبقات رقيقة شفافة تذيب الحدود بين الضوء والظل، فلا يظهر لزاويتي الفم والعينين حدّ قاطع، وهو ما يمنح التعبير غموضه. وخلف الجالسة منظر طبيعي بعيد يضيف عمقًا هوائيًا إلى الصورة."
+    ],
+    "details": [
+      {
+        "title": "اليدان",
+        "text": "اليدان مسترخيتان فوق مسند المقعد، ويهتم بهما الدارسون بوصفهما جزءًا من بناء التكوين الهرمي."
+      },
+      {
+        "title": "المنظر البعيد",
+        "text": "طرق وجسر وسلاسل جبلية زرقاء تتلاشى في الضباب، وتتفاوت خطوط الأفق على جانبي الرأس."
+      }
+    ],
+    "interpretations": [
+      {
+        "text": "تعددت تفسيرات الابتسامة، من ابتسامة مجاملة إلى انعكاس لحالة داخلية. ولا يوجد تفسير حاسم يستند إلى كلام الفنان نفسه.",
+        "attribution": "تفسيرات متعددة بلا إجماع"
+      }
+    ],
+    "related": [
+      {
+        "artworkId": "birth-of-venus",
+        "reason": "من عصر النهضة الإيطالية نفسه، لكن بمنهج خطي أسطوري"
+      },
+      {
+        "artworkId": "girl-pearl-earring",
+        "reason": "وجه يلتفت إلى المشاهد في سياق مختلف"
+      }
+    ],
+    "sources": [],
+    "image": {
+      "asset": "assets/img/mona-lisa.jpg",
+      "width": 960,
+      "height": 1452
+    },
+    "commonsFile": "Mona_Lisa.jpg",
+    "wikipediaTitle": "موناليزا",
+    "credit": {
+      "author": "Leonardo da Vinci",
+      "licence": "Public domain",
+      "fileUrl": "https://commons.wikimedia.org/wiki/File:Mona_Lisa.jpg",
+      "articleUrl": "https://ar.wikipedia.org/wiki/%D9%85%D9%88%D9%86%D8%A7%D9%84%D9%8A%D8%B2%D8%A7",
+      "attribution": "Image by Leonardo da Vinci, public domain via Wikimedia Commons. Wikipedia article under CC BY-SA.",
+      "isFallback": true
+    }
+  },
+  {
+    "id": "birth-of-venus",
+    "qid": "Q151047",
+    "titleAr": "ميلاد فينوس",
+    "titleOrig": "La nascita di Venere · The Birth of Venus",
+    "artistId": "botticelli",
+    "movementId": "renaissance",
+    "year": 1485,
+    "dateText": "نحو 1484 – 1486",
+    "medium": "ألوان تمبرا على قماش",
+    "dimensions": "172.5 × 278.9 سم",
+    "collection": "معرض أوفيتزي، فلورنسا",
+    "place": "فلورنسا، إيطاليا",
+    "poem": "من الصدفة يبدأ الجمال، ومن الريح يصل إلى الشاطئ.",
+    "intro": "لوحة ضخمة لبوتيتشيلي تصوّر الإلهة فينوس وهي تصل إلى الشاطئ على صدفة، من أشهر أعمال عصر النهضة الإيطالية.",
+    "story": [
+      "يُرجّح أن اللوحة طُلبت من أحد فروع عائلة ميديتشي في فلورنسا. وتصوّر على اليسار زفيروس إله الريح الغربية ومعه عروسه، وعلى اليمين إلهة الفصول تهمّ بتغطية فينوس."
+    ],
+    "reading": [
+      "تقف فينوس في وسط التكوين وجسدها طويل رشيق، وتقوم الخطوط المنحنية لشعرها والثياب والأمواج بدور إيقاعي. والألوان صافية وخفيفة، والمنظور قليل العمق لا يحاكي الواقع بدقة."
+    ],
+    "details": [
+      {
+        "title": "الصدفة",
+        "text": "تحمل فينوس إلى الشاطئ وتشكل قاعدة التكوين."
+      },
+      {
+        "title": "الرياح",
+        "text": "زفيروس وزوجته تنفخان فتتساقط الورود في الهواء."
+      }
+    ],
+    "interpretations": [
+      {
+        "text": "ربط كثير من الدارسين بين اللوحة والأفكار الأفلاطونية في بلاط ميديتشي، ورأوا في فينوس رمزًا للجمال المثالي. وتختلف الآراء في تفاصيل هذه القراءة.",
+        "attribution": "قراءة شائعة بين الدارسين"
+      }
+    ],
+    "related": [
+      {
+        "artworkId": "mona-lisa",
+        "reason": "عصر النهضة الإيطالية"
+      },
+      {
+        "artworkId": "the-kiss",
+        "reason": "لوحة أخرى تضع الجسد والزخرفة في مقام واحد"
+      }
+    ],
+    "sources": [],
+    "image": {
+      "asset": "assets/img/birth-of-venus.jpg",
+      "width": 1280,
+      "height": 804
+    },
+    "commonsFile": "Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg",
+    "wikipediaTitle": "ولادة فينوس",
+    "credit": {
+      "author": "Sandro Botticelli",
+      "licence": "Public domain",
+      "fileUrl": "https://commons.wikimedia.org/wiki/File:Sandro_Botticelli_-_La_nascita_di_Venere_-_Google_Art_Project_-_edited.jpg",
+      "articleUrl": "https://ar.wikipedia.org/wiki/%D9%88%D9%84%D8%A7%D8%AF%D8%A9_%D9%81%D9%8A%D9%86%D9%88%D8%B3",
+      "attribution": "Image by Sandro Botticelli, public domain via Wikimedia Commons. Wikipedia article under CC BY-SA.",
+      "isFallback": true
+    }
+  },
+  {
+    "id": "impression-sunrise",
+    "qid": "Q328523",
+    "titleAr": "انطباع، شروق الشمس",
+    "titleOrig": "Impression, soleil levant · Impression, Sunrise",
+    "artistId": "monet",
+    "movementId": "impressionism",
+    "year": 1872,
+    "dateText": "1872",
+    "medium": "زيت على قماش",
+    "dimensions": "48 × 63 سم",
+    "collection": "متحف مارموتان مونيه، باريس",
+    "place": "ميناء لوهافر، فرنسا",
+    "poem": "ضوءٌ يولد في الضباب قبل أن يُسمّى.",
+    "intro": "منظر لميناء لوهافر في الصباح الباكر، عرضه مونيه عام 1874 في معرض الفنانين المستقلين، فسمّى ناقدٌ المجموعة «الانطباعيين» على سبيل التهكم.",
+    "story": [
+      "كتب الناقد لويس لوروا مقالًا ساخرًا عن المعرض في صحيفة «لو شاريفاري»، واستعار من عنوان هذه اللوحة كلمة «انطباعيين». وتبنّى الفنانون الاسم لاحقًا."
+    ],
+    "reading": [
+      "تبدو الأشكال في اللوحة كتلًا لونية مبسطة: القوارب والرافعات في الضباب، وشمس برتقالية صغيرة تنعكس على الماء بخطوط أفقية. والشمس والسماء متقاربتان في درجة السطوع، فتبدو الشمس كأنها تهتز أمام العين."
+    ],
+    "details": [
+      {
+        "title": "الشمس",
+        "text": "قرص برتقالي صغير أقرب إلى بقعة لونية، لكنه أشد مواضع اللوحة ضياءً."
+      },
+      {
+        "title": "انعكاس الماء",
+        "text": "ضربات أفقية سريعة توحي بالتموج دون رسم كل موجة."
+      }
+    ],
+    "interpretations": [
+      {
+        "text": "يرى كثير من النقاد أن اللوحة تعلن عن انتقال الاهتمام من الموضوع إلى الإحساس البصري العابر.",
+        "attribution": "قراءة نقدية شائعة"
+      }
+    ],
+    "related": [
+      {
+        "artworkId": "great-wave",
+        "reason": "اهتم مونيه بالمطبوعات اليابانية"
+      },
+      {
+        "artworkId": "starry-night",
+        "reason": "فان غوخ: لون معبّر بعد درس الانطباعية"
+      }
+    ],
+    "sources": [],
+    "image": {
+      "asset": "assets/img/impression-sunrise.jpg",
+      "width": 1280,
+      "height": 993
+    },
+    "commonsFile": "Monet_-_Impression%2C_Sunrise.jpg",
+    "wikipediaTitle": "انطباع، شروق الشمس",
+    "credit": {
+      "author": "Claude Monet",
+      "licence": "Public domain",
+      "fileUrl": "https://commons.wikimedia.org/wiki/File:Monet_-_Impression%252C_Sunrise.jpg",
+      "articleUrl": "https://ar.wikipedia.org/wiki/%D8%A7%D9%86%D8%B7%D8%A8%D8%A7%D8%B9%D8%8C_%D8%B4%D8%B1%D9%88%D9%82_%D8%A7%D9%84%D8%B4%D9%85%D8%B3",
+      "attribution": "Image by Claude Monet, public domain via Wikimedia Commons. Wikipedia article under CC BY-SA.",
+      "isFallback": true
+    }
+  },
+  {
+    "id": "the-scream",
+    "qid": "Q18891156",
+    "titleAr": "الصرخة",
+    "titleOrig": "Skrik · The Scream",
+    "artistId": "munch",
+    "movementId": "symbolism",
+    "year": 1893,
+    "dateText": "1893",
+    "medium": "تمبرا وألوان طباشيرية على الكرتون",
+    "dimensions": "91 × 73.5 سم",
+    "collection": "المتحف الوطني، أوسلو",
+    "place": "أوسلو، النرويج",
+    "poem": "حين تضيق السماء، يصير الصوت لونًا.",
+    "intro": "أشهر أعمال إدفارد مونش. أنجز الفنان منها أكثر من نسخة بين لوحات ورسم ملوّن وطباعة حجرية، وهذه نسخة عام 1893.",
+    "story": [
+      "كتب مونش في يومياته عام 1892 عن نزهة عند الغروب تحولت فيها السماء إلى أحمر دموي، وأنه شعر بصرخة لا نهائية تعبر الطبيعة.",
+      "ويتجادل الدارسون في ما إذا كان الشخص في اللوحة يصرخ أو يسدّ أذنيه عن صرخة الطبيعة."
+    ],
+    "reading": [
+      "خطوط متموجة تمتد من السماء إلى الماء وتلتف حول الشخص، وجسر مستقيم بخطوط منظور حادة يدفع عين المشاهد إلى الأمام. الألوان مشبعة، والوجه مبسّط كجمجمة."
+    ],
+    "details": [
+      {
+        "title": "الشخص في المقدمة",
+        "text": "ملامح مبسطة ويدان على الوجه، تتحول فيها الحالة النفسية إلى شكل."
+      },
+      {
+        "title": "الشخصان على الجسر",
+        "text": "يتابعان السير بهدوء، فتتباين لا مبالاتهما مع انفعال المقدمة."
+      }
+    ],
+    "interpretations": [
+      {
+        "text": "يعدّ كثير من الدارسين اللوحة مثالًا على التعبير عن القلق الحديث، ويقرؤونها بوصفها صورة لحالة داخلية لا لمنظر بعينه.",
+        "attribution": "قراءة شائعة"
+      }
+    ],
+    "related": [
+      {
+        "artworkId": "starry-night",
+        "reason": "سماء متموجة وتعبير لوني عن الإحساس"
+      },
+      {
+        "artworkId": "the-kiss",
+        "reason": "رمزية أوروبية في المرحلة نفسها تقريبًا"
+      }
+    ],
+    "sources": [],
+    "image": {
+      "asset": "assets/img/the-scream.jpg",
+      "width": 960,
+      "height": 1191
+    },
+    "commonsFile": "Edvard_Munch%2C_1893%2C_The_Scream%2C_oil%2C_tempera_and_pastel_on_cardboard%2C_91_x_73_cm%2C_National_Gallery_of_Norway.jpg",
+    "wikipediaTitle": "The Scream",
+    "credit": {
+      "author": "Edvard Munch",
+      "licence": "Public domain",
+      "fileUrl": "https://commons.wikimedia.org/wiki/File:Edvard_Munch%252C_1893%252C_The_Scream%252C_oil%252C_tempera_and_pastel_on_cardboard%252C_91_x_73_cm%252C_National_Gallery_of_Norway.jpg",
+      "articleUrl": "https://en.wikipedia.org/wiki/The_Scream",
+      "attribution": "Image by Edvard Munch, public domain via Wikimedia Commons. Wikipedia article under CC BY-SA.",
+      "isFallback": true
+    }
+  },
+  {
+    "id": "night-watch",
+    "qid": "Q219831",
+    "titleAr": "الحراسة الليلية",
+    "titleOrig": "De Nachtwacht · The Night Watch",
+    "artistId": "rembrandt",
+    "movementId": "dutch",
+    "year": 1642,
+    "dateText": "1642",
+    "medium": "زيت على قماش",
+    "dimensions": "نحو 363 × 437 سم",
+    "collection": "متحف ريكس، أمستردام",
+    "place": "أمستردام، هولندا",
+    "poem": "عتمةٌ تتسع، وبقعة ضوء تمشي.",
+    "intro": "بورتريه جماعي ضخم لفرقة حرس مدني بقيادة الكابتن فرانس بانينغ كوك، رسمه رامبرانت عام 1642.",
+    "story": [
+      "اسم «الحراسة الليلية» لاحق، وأطلقه الناس لأن طبقة الورنيش القديمة أظلمت اللوحة. وبعد تنظيفها ظهر أن المشهد في وضح النهار.",
+      "قُصّت أطراف اللوحة عام 1715 حين نُقلت إلى دار البلدية في أمستردام."
+    ],
+    "reading": [
+      "بدل صف جامد من الوجوه، أظهر رامبرانت الفرقة وهي تتحرك. الضوء يلتقط الكابتن وملازمه والفتاة الصغيرة في المنتصف، بينما يظل بقية المشهد في الظل."
+    ],
+    "details": [
+      {
+        "title": "القائد والملازم",
+        "text": "يتقدمان إلى الأمام، ويقع ظل يد الكابتن على سترة الملازم."
+      },
+      {
+        "title": "الفتاة المضيئة",
+        "text": "شخصية رمزية يرى فيها بعض الدارسين شعارًا للفرقة."
+      }
+    ],
+    "interpretations": [
+      {
+        "text": "ترى بعض القراءات أن الفتاة تحمل رموزًا تشير إلى الفرقة، وتبقى هذه القراءة مجرد اجتهاد.",
+        "attribution": "اجتهاد بعض الدارسين"
+      }
+    ],
+    "related": [
+      {
+        "artworkId": "girl-pearl-earring",
+        "reason": "العصر الذهبي الهولندي: ضوء هادئ وحجم صغير"
+      },
+      {
+        "artworkId": "las-meninas",
+        "reason": "لوحة ضخمة من القرن نفسه تتحرك فيها الشخوص داخل مشهد واحد"
+      }
+    ],
+    "sources": [],
+    "image": {
+      "asset": "assets/img/night-watch.jpg",
+      "width": 1280,
+      "height": 1041
+    },
+    "commonsFile": "La_ronda_de_noche%2C_por_Rembrandt_van_Rijn.jpg",
+    "wikipediaTitle": "دورية الليل",
+    "credit": {
+      "author": "Rembrandt",
+      "licence": "Public domain",
+      "fileUrl": "https://commons.wikimedia.org/wiki/File:La_ronda_de_noche%252C_por_Rembrandt_van_Rijn.jpg",
+      "articleUrl": "https://ar.wikipedia.org/wiki/%D8%AF%D9%88%D8%B1%D9%8A%D8%A9_%D8%A7%D9%84%D9%84%D9%8A%D9%84",
+      "attribution": "Image by Rembrandt, public domain via Wikimedia Commons. Wikipedia article under CC BY-SA.",
+      "isFallback": true
+    }
+  },
+  {
+    "id": "milkmaid",
+    "qid": "Q167605",
+    "titleAr": "ساكبة الحليب",
+    "titleOrig": "Het melkmeisje · The Milkmaid",
+    "artistId": "vermeer",
+    "movementId": "dutch",
+    "year": 1657,
+    "dateText": "نحو 1657 – 1658",
+    "medium": "زيت على قماش",
+    "dimensions": "45.5 × 41 سم",
+    "collection": "متحف ريكس، أمستردام",
+    "place": "دلفت، هولندا",
+    "poem": "خيطٌ أبيض من الصبر ينسكب في إناء الصباح.",
+    "intro": "مشهد داخلي هادئ لامرأة تصبّ الحليب في إناء، من أشهر أعمال فيرمير.",
+    "story": [
+      "تقدّم اللوحة عملًا يوميًا بسيطًا بوقار هادئ، دون سرد أو مناسبة."
+    ],
+    "reading": [
+      "ضوء النافذة يلمس الوجه والذراعين والخبز، وتتناثر نقاط ضوء صغيرة على الخبز والإناء. والجدار الفارغ يترك المساحة للحركة الصغيرة."
+    ],
+    "details": [
+      {
+        "title": "الخبز",
+        "text": "نقاط من اللون الأصفر والأبيض تعطي الخبز ملمسه."
+      },
+      {
+        "title": "تيار الحليب",
+        "text": "خيط رفيع يتدفق في الإناء، وتعتني به اللوحة عنايتها بالوجه."
+      }
+    ],
+    "interpretations": [
+      {
+        "text": "يرى بعضهم في المشهد تكريمًا للعمل المنزلي، ويربطه آخرون برسائل أخلاقية شائعة في الفن الهولندي. ويبقى المعنى مفتوحًا.",
+        "attribution": "قراءات متعددة"
+      }
+    ],
+    "related": [
+      {
+        "artworkId": "girl-pearl-earring",
+        "reason": "العمل لنفس الفنان"
+      },
+      {
+        "artworkId": "night-watch",
+        "reason": "العصر الذهبي الهولندي نفسه"
+      }
+    ],
+    "sources": [],
+    "image": {
+      "asset": "assets/img/milkmaid.jpg",
+      "width": 960,
+      "height": 1079
+    },
+    "commonsFile": "Johannes_Vermeer_-_Het_melkmeisje_-_Google_Art_Project.png",
+    "wikipediaTitle": "ساقية الحليب",
+    "credit": {
+      "author": "Johannes Vermeer",
+      "licence": "Public domain",
+      "fileUrl": "https://commons.wikimedia.org/wiki/File:Johannes_Vermeer_-_Het_melkmeisje_-_Google_Art_Project.png",
+      "articleUrl": "https://ar.wikipedia.org/wiki/%D8%B3%D8%A7%D9%82%D9%8A%D8%A9_%D8%A7%D9%84%D8%AD%D9%84%D9%8A%D8%A8",
+      "attribution": "Image by Johannes Vermeer, public domain via Wikimedia Commons. Wikipedia article under CC BY-SA.",
+      "isFallback": true
+    }
+  },
+  {
+    "id": "wanderer",
+    "qid": "Q311243",
+    "titleAr": "المتجوّل فوق بحر الضباب",
+    "titleOrig": "Der Wanderer über dem Nebelmeer",
+    "artistId": "friedrich",
+    "movementId": "romanticism",
+    "year": 1818,
+    "dateText": "نحو 1818",
+    "medium": "زيت على قماش",
+    "dimensions": "94.8 × 74.8 سم",
+    "collection": "قاعة هامبورغ للفنون (كونستهاله)",
+    "place": "ألمانيا",
+    "poem": "جبلٌ، وضباب، وإنسانٌ يتعلّم الصِّغَر.",
+    "intro": "رجل يقف على صخرة ويداه خلفه، يتأمل بحرًا من الضباب بين القمم. صارت اللوحة رمزًا للرومانسية.",
+    "story": [
+      "يُرى الرجل من الخلف، وهي تقنية يكررها فريدريش لتدعو المشاهد إلى أن يقف مكانه. ولا يوجد اتفاق على هوية الرجل."
+    ],
+    "reading": [
+      "الرجل في مركز التكوين تقريبًا، والقمم تتراجع نحو الأفق في طبقات من الضباب. والأفق المنخفض والسماء الصافية يعطيان إحساسًا بالاتساع والصمت."
+    ],
+    "details": [
+      {
+        "title": "الرجل من الخلف",
+        "text": "يختفي وجهه، فيحل المشاهد محله."
+      },
+      {
+        "title": "الضباب",
+        "text": "يملأ الوادي ويخفي المسافات، فلا تُعرف حدود المنظر."
+      }
+    ],
+    "interpretations": [
+      {
+        "text": "يُقرأ المشهد غالبًا بوصفه تأملًا في الصغر أمام اتساع الطبيعة، وقراءات أخرى تربطه بتجربة روحية. ولم يترك الفنان تفسيرًا مكتوبًا.",
+        "attribution": "قراءة شائعة"
+      }
+    ],
+    "related": [
+      {
+        "artworkId": "starry-night",
+        "reason": "طبيعة تصبح مرآة لحالة داخلية"
+      },
+      {
+        "artworkId": "the-scream",
+        "reason": "منظر واسع وقلق إنساني"
+      }
+    ],
+    "sources": [],
+    "image": {
+      "asset": "assets/img/wanderer.jpg",
+      "width": 960,
+      "height": 1231
+    },
+    "commonsFile": "Caspar_David_Friedrich_-_Wanderer_above_the_Sea_of_Fog.jpeg",
+    "wikipediaTitle": "متجول فوق بحر من الضباب",
+    "credit": {
+      "author": "Caspar David Friedrich",
+      "licence": "Public domain",
+      "fileUrl": "https://commons.wikimedia.org/wiki/File:Caspar_David_Friedrich_-_Wanderer_above_the_Sea_of_Fog.jpeg",
+      "articleUrl": "https://ar.wikipedia.org/wiki/%D9%85%D8%AA%D8%AC%D9%88%D9%84_%D9%81%D9%88%D9%82_%D8%A8%D8%AD%D8%B1_%D9%85%D9%86_%D8%A7%D9%84%D8%B6%D8%A8%D8%A7%D8%A8",
+      "attribution": "Image by Caspar David Friedrich, public domain via Wikimedia Commons. Wikipedia article under CC BY-SA.",
+      "isFallback": true
+    }
+  },
+  {
+    "id": "las-meninas",
+    "qid": "Q208758",
+    "titleAr": "الوصيفات",
+    "titleOrig": "Las Meninas",
+    "artistId": "velazquez",
+    "movementId": "baroque",
+    "year": 1656,
+    "dateText": "1656",
+    "medium": "زيت على قماش",
+    "dimensions": "318 × 276 سم",
+    "collection": "متحف برادو، مدريد",
+    "place": "مدريد، إسبانيا",
+    "poem": "من ينظر إلى من؟ والمرآة تعرف.",
+    "intro": "مشهد في مرسم داخل القصر الملكي، تتوسطه الأميرة الصغيرة مارغريتا تيريزا ومن حولها وصيفاتها، ويظهر فيه الرسام نفسه أمام لوحة كبيرة.",
+    "story": [
+      "في مرآة الجدار الخلفي تنعكس صورتان تُعتقد أنهما للملك فيليب الرابع وزوجته. وهكذا يتساءل المشاهد: من ينظر إلى من؟"
+    ],
+    "reading": [
+      "الضوء من النافذة اليمنى يبني طبقات من الفراغ حتى الباب المفتوح في الخلف. وتتوزع النظرات بين الأميرة والمشاهد والمرآة، فتتشابك العلاقات."
+    ],
+    "details": [
+      {
+        "title": "المرآة",
+        "text": "مستطيل صغير ساطع في الخلفية يضيف المشهد الغائب."
+      },
+      {
+        "title": "الرسام",
+        "text": "يقف فيلاثكيث على اليسار بفرشاته. ويُروى أن الصليب الأحمر على صدره أُضيف إلى اللوحة بعد إنجازها."
+      }
+    ],
+    "interpretations": [
+      {
+        "text": "يعدّها كثير من الدارسين تأملًا في الرؤية والتمثيل، ويربطها آخرون بمكانة الرسام في البلاط. وتعددت التفسيرات منذ قرون.",
+        "attribution": "تفسيرات متعددة"
+      }
+    ],
+    "related": [
+      {
+        "artworkId": "night-watch",
+        "reason": "لوحة جماعية ضخمة من القرن نفسه"
+      },
+      {
+        "artworkId": "girl-pearl-earring",
+        "reason": "وجه ينظر إلى المشاهد"
+      }
+    ],
+    "sources": [],
+    "image": {
+      "asset": "assets/img/las-meninas.jpg",
+      "width": 960,
+      "height": 1105
+    },
+    "commonsFile": "Las_Meninas%2C_by_Diego_Vel%C3%A1zquez%2C_from_Prado_in_Google_Earth.jpg",
+    "wikipediaTitle": "لاس مينيناس",
+    "credit": {
+      "author": "Diego Velázquez",
+      "licence": "Public domain",
+      "fileUrl": "https://commons.wikimedia.org/wiki/File:Las_Meninas%252C_by_Diego_Vel%25C3%25A1zquez%252C_from_Prado_in_Google_Earth.jpg",
+      "articleUrl": "https://ar.wikipedia.org/wiki/%D9%84%D8%A7%D8%B3_%D9%85%D9%8A%D9%86%D9%8A%D9%86%D8%A7%D8%B3",
+      "attribution": "Image by Diego Velázquez, public domain via Wikimedia Commons. Wikipedia article under CC BY-SA.",
+      "isFallback": true
+    }
+  },
+  {
+    "id": "the-kiss",
+    "qid": "Q698487",
+    "titleAr": "القبلة",
+    "titleOrig": "Der Kuss · The Kiss",
+    "artistId": "klimt",
+    "movementId": "symbolism",
+    "year": 1907,
+    "dateText": "1907 – 1908",
+    "medium": "زيت وأوراق ذهب على قماش",
+    "dimensions": "180 × 180 سم",
+    "collection": "قصر بلفيدير، فيينا",
+    "place": "فيينا، النمسا",
+    "poem": "ذهبٌ يلفّ عناقًا، وحافةٌ تنتظر.",
+    "intro": "عمل مربع الشكل لغوستاف كليمت يصوّر عناقًا بين رجل وامرأة على أرضية مغطاة بأوراق الذهب، من ذروة ما يسمى «المرحلة الذهبية» في عمله.",
+    "story": [
+      "عُرضت اللوحة في معرض «كونستشاو» في فيينا عام 1908، ثم دخلت مجموعة قصر بلفيدير في فيينا."
+    ],
+    "reading": [
+      "يلتحم الجسدان في كتلة واحدة، وتتحول ثيابهما إلى زخارف مسطحة: مستطيلات للرجل ودوائر وأزهار للمرأة. وتتقابل واقعية الوجهين واليدين مع تسطيح الأرضية والثياب."
+    ],
+    "details": [
+      {
+        "title": "الوجهان",
+        "text": "الجزء الواقعي الوحيد تقريبًا في اللوحة."
+      },
+      {
+        "title": "حافة المرج",
+        "text": "يلاحظ بعض الدارسين أن الأرضية الزهرية تنتهي عند حافة تقترب منها قدما المرأة."
+      }
+    ],
+    "interpretations": [
+      {
+        "text": "ترى بعض القراءات في اللوحة احتفاء بالحب، وتراها أخرى عملًا عن الذوبان في الآخر. ولا يوجد تفسير نهائي.",
+        "attribution": "قراءات متعددة"
+      }
+    ],
+    "related": [
+      {
+        "artworkId": "the-scream",
+        "reason": "رمزية أوروبية في المرحلة نفسها"
+      },
+      {
+        "artworkId": "birth-of-venus",
+        "reason": "جسد مثالي وزخرفة"
+      }
+    ],
+    "sources": [],
+    "image": {
+      "asset": "assets/img/the-kiss.jpg",
+      "width": 960,
+      "height": 963
+    },
+    "commonsFile": "The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg",
+    "wikipediaTitle": "لوحة القبلة",
+    "credit": {
+      "author": "Gustav Klimt",
+      "licence": "Public domain",
+      "fileUrl": "https://commons.wikimedia.org/wiki/File:The_Kiss_-_Gustav_Klimt_-_Google_Cultural_Institute.jpg",
+      "articleUrl": "https://ar.wikipedia.org/wiki/%D9%84%D9%88%D8%AD%D8%A9_%D8%A7%D9%84%D9%82%D8%A8%D9%84%D8%A9",
+      "attribution": "Image by Gustav Klimt, public domain via Wikimedia Commons. Wikipedia article under CC BY-SA.",
+      "isFallback": true
+    }
+  },
+  {
+    "id": "cafe-terrace",
+    "qid": "Q1025704",
+    "titleAr": "شرفة مقهى في الليل",
+    "titleOrig": "Terrasse du café le soir · Café Terrace at Night",
+    "artistId": "van-gogh",
+    "movementId": "postimpressionism",
+    "year": 1888,
+    "dateText": "سبتمبر 1888",
+    "medium": "زيت على قماش",
+    "dimensions": "80.7 × 65.3 سم",
+    "collection": "متحف كرولر مولر، أوتيرلو",
+    "place": "آرل، فرنسا",
+    "poem": "مصباحٌ يحرس الليل، ونجومٌ فوقه تتعلم الجلوس.",
+    "intro": "رسمها فان غوخ في آرل، ويُعدّها كثيرون أول لوحاته التي تظهر فيها نجوم في السماء.",
+    "story": [
+      "رسم المشهد مساءً في ساحة آرل مضاءً بمصباح غاز، ووكتب في رسائله عن رغبته في رسم المشاهد الليلية دون استعمال الأسود."
+    ],
+    "reading": [
+      "يتقابل الأصفر الدافئ لمصباح الشرفة مع الأزرق العميق للسماء. وخطوط الشارع تسحب العين إلى عمق المشهد."
+    ],
+    "details": [
+      {
+        "title": "المصباح",
+        "text": "مصدر الضوء الأصفر الذي يبني الصورة."
+      },
+      {
+        "title": "النجوم",
+        "text": "تتناثر فوق البيوت كأنها ورود صغيرة."
+      }
+    ],
+    "interpretations": [
+      {
+        "text": "يربط بعض الدارسين اللوحة بالمشهد الأخير للمسيح مع الحواريين في الشرفة، لكنها قراءة خلافية.",
+        "attribution": "قراءة خلافية"
+      }
+    ],
+    "related": [
+      {
+        "artworkId": "starry-night",
+        "reason": "اللوحة الليلية التالية بعد عام"
+      },
+      {
+        "artworkId": "night-watch",
+        "reason": "ضوء دافئ يخرج من العتمة"
+      }
+    ],
+    "sources": [],
+    "image": {
+      "asset": "assets/img/cafe-terrace.jpg",
+      "width": 960,
+      "height": 1197
+    },
+    "commonsFile": "Van_Gogh_-_Terrace_of_a_Caf%C3%A9_at_Night_%28Place_du_Forum%29_1888.jpg",
+    "wikipediaTitle": "شرفة مقهى في الليل",
+    "credit": {
+      "author": "Vincent van Gogh",
+      "licence": "Public domain",
+      "fileUrl": "https://commons.wikimedia.org/wiki/File:Van_Gogh_-_Terrace_of_a_Caf%25C3%25A9_at_Night_%2528Place_du_Forum%2529_1888.jpg",
+      "articleUrl": "https://ar.wikipedia.org/wiki/%D8%B4%D8%B1%D9%81%D8%A9_%D9%85%D9%82%D9%87%D9%89_%D9%81%D9%8A_%D8%A7%D9%84%D9%84%D9%8A%D9%84",
+      "attribution": "Image by Vincent van Gogh, public domain via Wikimedia Commons. Wikipedia article under CC BY-SA.",
+      "isFallback": true
+    }
+  },
+  {
+    "id": "persistence-of-memory",
+    "qid": "Q25729",
+    "titleAr": "إصرار الذاكرة",
+    "titleOrig": "La persistencia de la memoria · The Persistence of Memory",
+    "artistId": "dali",
+    "movementId": "surrealism",
+    "year": 1931,
+    "dateText": "1931",
+    "medium": "زيت على قماش",
+    "dimensions": "24.1 × 33 سم",
+    "collection": "متحف الفن الحديث (MoMA)، نيويورك",
+    "place": "إسبانيا",
+    "poem": "ساعاتٌ تذوب، والذاكرة تصرّ.",
+    "intro": "لوحة صغيرة لسلفادور دالي تظهر فيها ساعات رخوة في منظر صحراوي. محمية بحقوق النشر، ولذلك لا تُعرض صورتها في هذا النموذج.",
+    "story": [
+      "لا يعرض هذا النموذج الصورة لأن حقوق الاستخدام لم تُحسم. وفي النسخة النهائية تُعرض الصورة وفق رخصة رسمية من جهة الحقوق."
+    ],
+    "reading": [
+      "تجمع اللوحة بين تفاصيل واقعية دقيقة وتركيب غير منطقي: ساعات تنسدل كأنها مادة لينة على شجرة وصندوق وكائن ملقى على الأرض."
+    ],
+    "details": [
+      {
+        "title": "الساعات الرخوة",
+        "text": "العنصر الذي ارتبطت به اللوحة في الذاكرة العامة."
+      }
+    ],
+    "interpretations": [
+      {
+        "text": "وفسّرها كثيرون بوصفها تأملًا في الزمن في الحلم. وقال دالي نفسه إن الفكرة جاءته من صورة جبن ذائب، لكن القراءات تتعدد.",
+        "attribution": "تفسيرات متعددة"
+      }
+    ],
+    "related": [
+      {
+        "artworkId": "starry-night",
+        "reason": "فن ينتقل من الواقع إلى الإحساس والحلم"
+      }
+    ],
+    "sources": [],
+    "image": null,
+    "commonsFile": "",
+    "wikipediaTitle": "إصرار الذاكرة",
+    "credit": {
+      "author": "No image; rights held",
+      "licence": "Image withheld",
+      "fileUrl": "",
+      "articleUrl": "https://ar.wikipedia.org/wiki/%D8%A5%D8%B5%D8%B1%D8%A7%D8%B1_%D8%A7%D9%84%D8%B0%D8%A7%D9%83%D8%B1%D8%A9",
+      "attribution": "Wikipedia article under CC BY-SA.",
+      "isFallback": true
+    }
+  }
+]

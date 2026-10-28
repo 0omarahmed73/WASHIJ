@@ -1,0 +1,1 @@
+Every pair is computed from tokens.json by the generator and asserted at or above 4.5:1 (3:1 for borders and focus). Yellow is never text.

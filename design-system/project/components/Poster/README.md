@@ -1,0 +1,1 @@
+A mock exhibition, not a real show. One image, one thread, one headline. Artwork placeholder.

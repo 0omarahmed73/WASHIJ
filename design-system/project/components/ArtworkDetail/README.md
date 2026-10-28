@@ -1,0 +1,1 @@
+The work is shown whole at its true proportion (92.1:73.7), never cropped, never filtered. Facts first, context second, interpretations labelled as such, sources named. The image is a placeholder.

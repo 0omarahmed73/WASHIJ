@@ -1,0 +1,1 @@
+The Arabic cover is primary; the English cover mirrors it. Mastheads use the wordmarks; image is a placeholder with the Thread crossing it once; two lines of type at most.

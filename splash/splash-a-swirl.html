@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>WASHIJ splash A – swirling sky</title>
+<style>
+@font-face{font-family:Amiri;font-weight:700;src:url(../app/assets/fonts/Amiri-Bold.ttf)}
+@font-face{font-family:'Cormorant Garamond';font-weight:300 700;src:url("../app/assets/fonts/CormorantGaramond%5Bwght%5D.ttf")}
+:root{--midnight:#081B33;--ivory:#F6F2E9;--yellow:#F2C94C;--mist:#9FB3CF}
+html,body{margin:0;height:100%;background:var(--midnight);overflow:hidden}
+canvas{position:fixed;inset:0;width:100%;height:100%;display:block}
+.logo{position:fixed;inset:0;display:grid;place-content:center;justify-items:center;gap:20px;text-align:center}
+svg{width:min(34vmin,200px);height:auto;overflow:visible}
+.f,.t1,.t2{fill:none;stroke-width:3.2;stroke-dasharray:1;stroke-dashoffset:1}
+.f{stroke:var(--ivory);stroke-linejoin:miter;animation:draw 1.6s .5s cubic-bezier(.5,0,.2,1) forwards}
+.t1,.t2{stroke:var(--yellow);stroke-linecap:round;animation:draw 1.4s 1.3s cubic-bezier(.5,0,.2,1) forwards}
+.t2{animation-delay:1.9s;animation-duration:.5s}
+.ar{font:700 clamp(34px,8vmin,56px)/1 Amiri,'Scheherazade New',serif;color:var(--ivory);opacity:0;animation:fade 1s 2.4s forwards}
+.ar i{color:var(--yellow);font-style:normal}
+.en{font:500 clamp(11px,2vmin,14px)/1 'Cormorant Garamond',Georgia,serif;letter-spacing:.32em;color:var(--mist);opacity:0;animation:fade 1s 2.8s forwards;direction:ltr}
+.veil{position:fixed;inset:0;background:radial-gradient(ellipse at center,rgba(8,27,51,.78) 0,rgba(8,27,51,.35) 38%,transparent 70%);pointer-events:none}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes fade{to{opacity:1}}
+@media (prefers-reduced-motion:reduce){.f,.t1,.t2{animation:none;stroke-dashoffset:0}.ar,.en{animation:none;opacity:1}}
+</style></head><body>
+<canvas id="c" aria-hidden="true"></canvas><div class="veil"></div>
+<main class="logo" role="img" aria-label="وشيج">
+<svg viewBox="0 0 120 120"><path class="f" pathLength="1" d="M33,73.13 V15 H87 V105 H33 V84.87"/><path class="t1" pathLength="1" d="M6,98 L33,79.00 L80.60,45.50"/><path class="t2" pathLength="1" d="M93.40,36.50 L114,22"/></svg>
+<div class="ar" lang="ar">و<i>َ</i>شيج</div><div class="en">WASHIJ</div>
+</main>
+<script>
+const cv=document.getElementById('c'),g=cv.getContext('2d');
+const still=matchMedia('(prefers-reduced-motion:reduce)').matches;
+let W,H,D,P=[];const COL=['#1E3A8A','#2563EB','#7DA3D8','#14305A','#1E3A8A','#9FB3CF'];
+function size(){D=Math.min(devicePixelRatio||1,2);W=cv.width=innerWidth*D;H=cv.height=innerHeight*D;g.fillStyle='#081B33';g.fillRect(0,0,W,H);
+ const n=Math.round(innerWidth*innerHeight/1100);P=Array.from({length:n},()=>({x:Math.random()*W,y:Math.random()*H,c:COL[Math.random()*COL.length|0],l:0}))}
+const ang=(x,y,t)=>{const a=x/W*6.2,b=y/H*5;return Math.sin(a+t*.2)*1.4+Math.cos(b-t*.15)*1.4+Math.sin((x*.5+y)/W*9+t*.3)*.8};
+const stars=[];function mk(){stars.length=0;for(let i=0;i<70;i++)stars.push({x:Math.random()*W,y:Math.random()*H*.8,r:(Math.random()*1.6+.6)*D,p:Math.random()*6.28})}
+let t=0,fr=0;
+function step(){t+=.016;fr++;
+ g.fillStyle='rgba(8,27,51,.02)';g.fillRect(0,0,W,H);
+ g.lineWidth=3*D;g.lineCap='round';g.globalAlpha=.6;
+ for(const p of P){const a=ang(p.x,p.y,t),nx=p.x+Math.cos(a)*2.4*D,ny=p.y+Math.sin(a)*2.4*D;
+  g.strokeStyle=p.c;g.beginPath();g.moveTo(p.x,p.y);g.lineTo(nx,ny);g.stroke();p.x=nx;p.y=ny;
+  if(++p.l>220||nx<0||ny<0||nx>W||ny>H){p.x=Math.random()*W;p.y=Math.random()*H;p.l=0}}
+ g.globalAlpha=1;
+ for(const s of stars){const k=.6+.4*Math.sin(t*1.4+s.p);
+  const gr=g.createRadialGradient(s.x,s.y,0,s.x,s.y,s.r*7);gr.addColorStop(0,`rgba(242,201,76,${.5*k})`);gr.addColorStop(1,'rgba(242,201,76,0)');
+  g.fillStyle=gr;g.beginPath();g.arc(s.x,s.y,s.r*7,0,6.28);g.fill();
+  g.fillStyle=`rgba(246,242,233,${k})`;g.beginPath();g.arc(s.x,s.y,s.r,0,6.28);g.fill()}
+ }
+function loop(){step();if(!still)requestAnimationFrame(loop)}
+size();mk();
+for(let i=0;i<(still?260:200);i++)step();if(!still)requestAnimationFrame(loop)
+addEventListener('resize',()=>{size();mk()});
+</script></body></html>

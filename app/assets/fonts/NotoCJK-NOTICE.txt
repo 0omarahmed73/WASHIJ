@@ -1,0 +1,5 @@
+WASHIJ-CJK-Fallback.ttf is a subset of Noto Sans CJK JP Regular (version
+2.004), copyright 2010-2012 Google Corporation. It contains the ten Japanese
+glyphs used in the artwork and artist names and has been renamed for fallback
+use. It is licensed under the SIL Open Font License 1.1; see
+NotoCJK-OFL.txt.

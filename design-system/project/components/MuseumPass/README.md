@@ -1,0 +1,1 @@
+A brand application, not a product feature. Front: hairline symbol pattern at 70% under the lockup, bg scrim from the bottom; back: name and number on surface. Yellow appears once, as the fatha and thread.
